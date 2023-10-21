@@ -1,0 +1,19 @@
+{
+  "name": "startlingbarbarabain.com",
+  "version": "1.0.0",
+  "description": "The website for the podcast Startling Barbara Bain",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx @11ty/eleventy",
+    "start": "npx @11ty/eleventy --serve"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "luxon": "^3.4.3",
+    "standard": "^17.1.0"
+  }
+}

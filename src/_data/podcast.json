@@ -1,0 +1,17 @@
+{
+  "title": "Startling Barbara Bain",
+  "description": "A Space: 1999 commentary podcast by the creators of Bondfinger and Flight Through Entirety.",
+  "subtitle": "A Space: 1999 commentary podcast by the creators of Bondfinger and Flight Through Entirety.",
+  "owner": {
+    "name": "Nathan Bottomley",
+    "email": "nathan.bottomley@gmail.com"
+  },
+  "author": "Flight Through Entirety",
+  "category": "TV & Film",
+  "subcategory": "TV Reviews",
+  "imagePath": "/img/podcast-logo.jpeg",
+  "explicit": true,
+  "language": "en",
+  "startingYear": 2023,
+  "copyright": "Flight Through Entirety"
+}
