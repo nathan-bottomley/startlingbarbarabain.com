@@ -16,10 +16,15 @@ body > main
   flex-grow: 1;
 }
 
-header > *, main, footer > *
+body > *:not(header, footer), header > *, footer > *
 {
   inline-size: var(--content-inline-size);
   margin-inline: auto;
+}
+
+body > * + *
+{
+  margin-block-start: var(--size-xl);
 }
 
 /* main colors */
