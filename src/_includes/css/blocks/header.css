@@ -59,6 +59,18 @@ header
     }
   }
 
+  @media (width < 320px)
+  {
+    .strapline, .main-navigation
+    {
+      font-size: var(--size-xxs);
+    }
+    h1
+    {
+      font-size: var(--size-m);
+    }
+  }
+
   .main-navigation
   {
     ul
