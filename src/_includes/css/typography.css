@@ -1,7 +1,13 @@
 @font-face 
 {
-  font-family: "FuturaBook";
+  font-family: "Futura Book";
   src: url('../fonts/FuturaBook.woff2') format('woff2'), url('../fonts/FuturaBook.woff') format('woff');
+}
+
+@font-face 
+{
+  font-family: "Futura Black";
+  src: url('../fonts/Futura Black.woff2') format('woff2'), url('../fonts/Futura Black.woff') format('woff');
 }
 
 body
@@ -18,6 +24,6 @@ em, strong
 
 h1, h2, h3, h4
 {
-  font-family: "FuturaBook", sans-serif;
+  font-family: "Futura Book", sans-serif;
   font-weight: 400;
 }

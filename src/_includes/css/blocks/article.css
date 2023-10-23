@@ -6,6 +6,7 @@ article
 
   h1 
   {
+    font-family: "Futura Black", sans-serif;
     font-size: var(--size-xxl);
     a
     {
@@ -15,8 +16,8 @@ article
 
   .space-1999-information
   {
+    font-family: "Futura Book", sans-serif;
     font-size: var(--size-s);
     text-transform: uppercase;
-    font-weight: 500;
   }
 }
