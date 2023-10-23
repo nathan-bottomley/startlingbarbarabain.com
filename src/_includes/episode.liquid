@@ -1,0 +1,29 @@
+<article>
+  <h1><a href="{{ postUrl }}">{{ title }}</a></h1>
+  <p class="space-1999-information">
+    Season {{ space1999[episodeNumber].season }},
+    Episode {{ space1999[episodeNumber].episode }}.
+    First broadcast on {{ space1999[episodeNumber].broadcastDate | date: "%A, %e %B %Y" }}.
+  </p>
+  {{ content }}
+  {% comment %} <figure type="audio">
+    <media-controller audio>
+      <audio preload="none" slot="media">
+        <source src="{% episodeUrl podcastEpisodeFilename %}" type="audio/mp3">
+      </audio>
+      <media-control-bar>
+        <media-play-button></media-play-button>
+        <media-time-display showduration></media-time-display>
+        <media-time-range></media-time-range>
+        <media-mute-button></media-mute-button>
+        <media-volume-range></media-volume-range>
+      </media-control-bar>
+    </media-controller>
+    <figcaption>
+    Download &middot; Open in new window &middot; Duration: {{ podcastEpisodeDuration }} &middot; Recorded on {{ podcastEpisodeRecordingDate | date: "%A, %d %B %Y" }}<br>
+    Subscribe:&nbsp;&nbsp;
+    {% for subscription in podcast.subscriptions %}
+      {% if not forloop.first %} &middot;{% endif %} <a href="{{ subscription.url }}"><strong>{{ subscription.name }}</strong></a>
+    {% endfor %}
+  </figure> {% endcomment %}
+</article>

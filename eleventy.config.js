@@ -24,6 +24,8 @@ module.exports = function (eleventyConfig) {
     return encodeURI(`${episodePrefix}${filename}`)
   })
 
+  eleventyConfig.addPassthroughCopy('src/img')
+
   return {
     dir: {
       input: 'src'

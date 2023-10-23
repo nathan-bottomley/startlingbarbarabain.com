@@ -1,0 +1,20 @@
+---
+title: Startling Barbara Bain
+permalink: "/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber | plus: 1 }}/{% endif %}"
+layout: layouts/base
+pagination:
+  data: collections.post
+  size: 10
+  reverse: true
+  alias: posts
+---
+{% for post in posts %}
+  {% render 'episode.liquid', title: post.data.title,
+                              date: post.date,
+                              postUrl: post.url,
+                              podcastEpisodeRecordingDate: post.data.podcastEpisodeRecordingDate,
+                              episodeNumber: post.data.episodeNumber,
+                              content: post.content,
+                              space1999: post.data.space1999,
+                              podcast: post.data.podcast %}
+{% endfor %}
