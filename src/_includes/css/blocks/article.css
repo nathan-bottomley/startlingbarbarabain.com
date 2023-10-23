@@ -1,0 +1,15 @@
+article
+{
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-l);
+  
+  h1 
+  {
+    font-size: var(--size-xxl);
+    a
+    {
+      text-decoration: none;
+    }
+  }
+}

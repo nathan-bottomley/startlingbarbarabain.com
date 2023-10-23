@@ -1,0 +1,23 @@
+@font-face 
+{
+  font-family: "FuturaBook";
+  src: url('../fonts/FuturaBook.woff2') format('woff2'), url('../fonts/FuturaBook.woff') format('woff');
+}
+
+body
+{
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 300;
+}
+
+em, strong
+{
+  font-weight: 500;
+  font-style: normal;
+}
+
+h1, h2, h3, h4
+{
+  font-family: "FuturaBook", sans-serif;
+  font-weight: 400;
+}

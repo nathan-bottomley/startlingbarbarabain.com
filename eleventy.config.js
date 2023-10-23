@@ -29,9 +29,11 @@ module.exports = function (eleventyConfig) {
     const episodePrefix = podcastData.episodePrefix
     return encodeURI(`${episodePrefix}${filename}`)
   })
+  eleventyConfig.addShortcode('year', () => DateTime.now().year)
 
   eleventyConfig.addPassthroughCopy('src/img')
   eleventyConfig.addPassthroughCopy('src/css')
+  eleventyConfig.addPassthroughCopy('src/fonts')
 
   return {
     dir: {

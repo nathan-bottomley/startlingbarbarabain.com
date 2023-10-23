@@ -3,16 +3,36 @@
   <head>
     <meta charset="UTF-8">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}/feed/podcast" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="generator" content="{{ eleventy.generator }}">
   </head>
   <body>
     <header>
-      <p class="strapline">A <em>Space: 1999</em> flashcast from the makers of
-        <a href="https://bondfinger.com"><em>Bondfinger</em></a> and
-        <a href="https://flightthroughentirety.com"><em>Flight Through Entirety</em></a>.</p>
-      <p class="site-heading"><img src="/img/barbara.png"><a href="/">Startling Barbara Bain</a></p>
+      <div class="header-content">
+        <img src="/img/barbara.png">
+        <div class="header-text">
+        <p class="strapline">A <em>Space: 1999</em> flashcast from the makers of
+          <a href="https://bondfinger.com"><em>Bondfinger</em></a>.</p>
+        <h1 class="site-title">
+          <a href="/">Startling Barbara Bain</a></h1>
+        <nav class="main-navigation">
+          <ul>
+            <li>About us</li>
+            <li>Our podcasts</li>
+          </ul>
+        </nav>
+        </div>
+      </div>
     </header>
+    <main>
     {{ content }}
+    </main>
+    <footer>
+      <p>© {% year %} FTE Studios. Website created by Nathan Bottomley.</p>
+    </footer>
   </body>
 </html>

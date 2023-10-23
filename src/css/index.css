@@ -1,2 +1,7 @@
 @import "reset.css";
 @import "variables.css";
+@import "defaults.css";
+@import "typography.css";
+@import "blocks/header.css";
+@import "blocks/footer.css";
+@import "blocks/article.css";

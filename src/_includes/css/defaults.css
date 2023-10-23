@@ -1,0 +1,37 @@
+html
+{
+  -webkit-text-size-adjust: 100%;
+}
+
+body
+{
+  min-block-size: 100dvh;
+  min-block-size: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body > main 
+{
+  flex-grow: 1;
+}
+
+header > *, main, footer > *
+{
+  inline-size: var(--content-inline-size);
+  margin-inline: auto;
+}
+
+/* main colors */
+
+body
+{
+  color: var(--main-text-color);
+  background-color: var(--main-background-color);
+}
+
+header, footer
+{
+  color: var(--secondary-text-color);
+  background-color: var(--secondary-background-color);
+}
