@@ -1,9 +1,15 @@
 const rssPlugin = require('@11ty/eleventy-plugin-rss')
+const cssPlugin = require('./_11ty/cssPlugin')
 const podcastData = require('./src/_data/podcast')
 const { DateTime } = require('luxon')
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(rssPlugin)
+  eleventyConfig.addPlugin(rssPlugin, {
+    posthtmlRenderOptions: {
+      closingSingleTag: 'default' // opt-out of <img/>-style XHTML single tags
+    }
+  })
+  eleventyConfig.addPlugin(cssPlugin)
 
   // shortcodes for podcast feed
 
@@ -25,6 +31,7 @@ module.exports = function (eleventyConfig) {
   })
 
   eleventyConfig.addPassthroughCopy('src/img')
+  eleventyConfig.addPassthroughCopy('src/css')
 
   return {
     dir: {
