@@ -1,0 +1,4 @@
+[[headers]]
+  for = "/feed/podcast"
+  [headers.values]
+    Content-Type = "application/rss+xml"
