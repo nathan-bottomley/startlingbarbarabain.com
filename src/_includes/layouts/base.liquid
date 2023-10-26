@@ -24,8 +24,15 @@
     </header>
     <nav class="main-navigation">
       <ul>
-        <li>About us</li>
-        <li>Our podcasts</li>
+        <li>
+          <a class="dropdown-trigger" href="#">Subscribe</a>
+          <ul class="dropdown">
+            {% for subscription in podcast.subscriptions %}
+            <li><a href="{{ subscription.url }}">{{ subscription.name }}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+        <li><a href="podcasts">Our podcasts</a></li>
       </ul>
     </nav>
     <main>

@@ -40,3 +40,23 @@ header, footer
   color: var(--secondary-text-color);
   background-color: var(--secondary-background-color);
 }
+
+/* links */
+
+*
+{
+  text-decoration-color: var(--barbara-brown);
+  text-decoration-thickness: 0.125em;
+  text-underline-offset: 0.125em;
+}
+
+*:visited
+{
+  color: var(--main-text-color);
+}
+
+*:hover, *:active
+{
+  color: var(--main-text-color);
+  text-decoration-color: white;
+}

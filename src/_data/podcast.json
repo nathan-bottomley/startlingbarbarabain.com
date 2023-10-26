@@ -14,5 +14,23 @@
   "language": "en",
   "startingYear": 2023,
   "copyright": "Flight Through Entirety",
-  "episodePrefix": "https://dts.podtrac.com/redirect.mp3/thesecondgreatandbountifulhumanempire.sfo3.cdn.digitalocean.com/"
+  "episodePrefix": "https://dts.podtrac.com/redirect.mp3/thesecondgreatandbountifulhumanempire.sfo3.cdn.digitalocean.com/",
+  "subscriptions": [
+    {
+      "name": "Apple Podcasts",
+      "url": "~"
+    },
+    {
+      "name": "Google Podcasts",
+      "url": "~"
+    },
+    {
+      "name": "Overcast",
+      "url": "~"
+    },
+    {
+      "name": "Spotify",
+      "url": "~"
+    }
+  ]
 }

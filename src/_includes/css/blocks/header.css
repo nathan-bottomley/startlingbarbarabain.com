@@ -50,6 +50,8 @@ header
 
 .main-navigation
 {
+  font-size: var(--size-s);
+  
   ul
   {
     list-style-type: none;
@@ -57,5 +59,44 @@ header
     margin: 0;
     display: flex;
     gap: var(--size-m);
+  }
+
+  .dropdown
+  {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-s);
+    visibility: hidden;
+    position: absolute;
+    display: none;
+    padding: var(--size-xs);
+    background-color: var(--barbara-beige);
+    border-radius: var(--size-xxs);
+    box-shadow: 2px 2px 2px 2px var(--barbara-beige-dark);
+    transform: translateX(calc(-1 * var(--size-s))) translateY(calc(-1 / 2 * var(--size-xxs)));
+
+    li
+    {
+      clear: both;
+      width: 100%;
+      padding-inline-start: 0;
+    }
+
+    li + li
+    {
+      margin-block-start: var(--size-xxs);
+    }
+  }
+
+  a:hover + .dropdown, .dropdown:hover, .dropdown:focus-within
+  {
+    visibility: visible;
+    display: block;
+    cursor: pointer;
+  }
+  
+  .dropdown-trigger:hover
+  {
+    text-decoration: none;
   }
 }
