@@ -50,7 +50,7 @@ header, footer
   text-underline-offset: 0.125em;
 }
 
-*:visited
+*:link, *:visited
 {
   color: var(--main-text-color);
 }
