@@ -27,10 +27,12 @@ header
   h1
   {
     font-size: var(--size-xxxl);
+    color: var(--secondary-text-color);
     
-    a
+    a, a *
     {
       text-decoration: none;
+      color: var(--secondary-text-color);
     }
 
     small
@@ -51,7 +53,7 @@ header
 .main-navigation
 {
   font-size: var(--size-s);
-  
+
   ul
   {
     list-style-type: none;

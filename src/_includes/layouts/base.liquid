@@ -10,6 +10,7 @@
     <script type="module" src="https://cdn.jsdelivr.net/npm/media-chrome@1/+esm"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="generator" content="{{ eleventy.generator }}">
+    {%- render 'social-media-metadata.liquid', site: site, title: title, tags: tags, content: content -%}
   </head>
   <body>
     <p class="strapline">A <em>Space: 1999</em> commentary podcast from the makers of
@@ -32,7 +33,7 @@
             {% endfor %}
           </ul>
         </li>
-        <li><a href="podcasts">Our podcasts</a></li>
+        <li><a href="/podcasts">Our podcasts</a></li>
       </ul>
     </nav>
     <main>
