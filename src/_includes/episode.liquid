@@ -5,8 +5,9 @@
     Episode {{ space1999[episodeNumber].episode }}.
     First broadcast on {{ space1999[episodeNumber].broadcastDate | date: "%A, %e %B %Y" }}.
   </p>
+  <p class="podcast-episode-information">{{ date | date: "%A, %e %B %Y" }}</p>
   {{ content }}
-  {% comment %} <figure type="audio">
+  <figure type="audio">
     <media-controller audio>
       <audio preload="none" slot="media">
         <source src="{% episodeUrl podcastEpisodeFilename %}" type="audio/mp3">
@@ -25,5 +26,5 @@
     {% for subscription in podcast.subscriptions %}
       {% if not forloop.first %} &middot;{% endif %} <a href="{{ subscription.url }}"><strong>{{ subscription.name }}</strong></a>
     {% endfor %}
-  </figure> {% endcomment %}
+  </figure>
 </article>

@@ -10,10 +10,24 @@
   src: url('../fonts/Futura Black.woff2') format('woff2'), url('../fonts/Futura Black.woff') format('woff');
 }
 
+@font-face 
+{
+  font-family: "Souvenir";
+  src: url('../fonts/Souvenir.woff2') format('woff2'), url('../fonts/Souvenir.woff') format('woff');
+}
+
+@font-face 
+{
+  font-family: "Souvenir";
+  src: url('../fonts/SouvenirI.woff2') format('woff2'), url('../fonts/SouvenirI.woff') format('woff');
+  font-style: italic;
+}
+
 body
 {
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 300;
+  font-family: "Souvenir", sans-serif;
+  font-weight: 400;
+  font-size: var(--size-m);
 }
 
 em, strong

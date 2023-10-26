@@ -20,4 +20,9 @@ article
     font-size: var(--size-s);
     text-transform: uppercase;
   }
+
+  .podcast-episode-information, figcaption
+  {
+    font-size: var(--size-xs);
+  }
 }

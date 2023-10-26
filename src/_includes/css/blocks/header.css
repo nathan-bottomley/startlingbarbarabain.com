@@ -1,7 +1,14 @@
 .strapline
 {
+  font-size: var(--size-s);
   text-align: center;
   padding: var(--size-xxs);
+
+  em
+  {
+    font-style: italic;
+    font-weight: 400;
+  }
 }
 
 header
@@ -37,6 +44,7 @@ header
     content-fit: contain;
     max-block-size: calc(2 * var(--size-6xl));
     inline-size: auto; 
+    padding-block-start: var(--size-xxs);
   }
 }
 
