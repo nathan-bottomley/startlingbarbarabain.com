@@ -1,0 +1,40 @@
+
+h1 + h2
+{
+  margin-block-start: var(--size-xxxl);
+}
+
+h2 + .podcast-profile
+{
+  margin-block-start: var(--size-m);
+}
+
+.podcast-profile + h2
+{
+  margin-block-start: var(--size-xxxl);
+}
+
+.podcast-profile
+{
+  display: flex;
+  flex-direction: row;
+  gap: var(--size-m);
+
+  a.logo
+  {
+    inline-size: min(20vw, 150px);
+    block-size: min(20vw, 150px);
+    flex-shrink: 0;
+  }
+
+  img
+  {
+    object-fit: fill;
+    border-radius: var(--size-s);
+  }
+
+  p
+  {
+    margin-block-start: 0;
+  }
+}
