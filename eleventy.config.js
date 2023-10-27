@@ -1,9 +1,18 @@
+const markdownIt = require('markdown-it')
+const markdownItAttrs = require('markdown-it-attrs')
 const rssPlugin = require('@11ty/eleventy-plugin-rss')
 const cssPlugin = require('./_11ty/cssPlugin')
 const podcastData = require('./src/_data/podcast')
 const { DateTime } = require('luxon')
 
 module.exports = function (eleventyConfig) {
+  const markdownItOptions = {
+    html: true,
+    typographer: true
+  }
+  const markdownLibrary = markdownIt(markdownItOptions).use(markdownItAttrs)
+  eleventyConfig.setLibrary('md', markdownLibrary)
+
   eleventyConfig.addPlugin(rssPlugin, {
     posthtmlRenderOptions: {
       closingSingleTag: 'default' // opt-out of <img/>-style XHTML single tags
