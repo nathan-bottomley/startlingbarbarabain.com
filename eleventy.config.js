@@ -2,6 +2,7 @@ const markdownIt = require('markdown-it')
 const markdownItAttrs = require('markdown-it-attrs')
 const rssPlugin = require('@11ty/eleventy-plugin-rss')
 const cssPlugin = require('./_11ty/cssPlugin')
+const siteData = require('./src/_data/site')
 const podcastData = require('./src/_data/podcast')
 const { DateTime } = require('luxon')
 
@@ -22,7 +23,15 @@ module.exports = function (eleventyConfig) {
 
   // shortcodes for podcast feed
 
-  eleventyConfig.addShortcode('feedCopyright', () => {
+  eleventyConfig.addShortcode('pageTitle', pageTitle => {
+    const siteTitle = siteData.title
+    if (pageTitle && pageTitle.length > 0 && pageTitle !== siteTitle) {
+      return `${pageTitle} &middot; ${siteTitle}`
+    } else {
+      return siteTitle
+    }
+  })
+eleventyConfig.addShortcode('feedCopyright', () => {
     const startingYear = podcastData.startingYear
     const currentYear = DateTime.now().year
     if (startingYear === currentYear) {
