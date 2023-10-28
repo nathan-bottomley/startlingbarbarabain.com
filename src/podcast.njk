@@ -38,6 +38,7 @@ eleventyExcludeFromCollections: true
       <link>{{ post.page.url | absoluteUrl(site.url) }}</link>
       <pubDate>{{ post.date | dateToRfc3339 }}</pubDate>
       <itunes:episode>{{ post.data.episodeNumber }}</itunes:episode>
+      <itunes:summary>{% include 'feed-description.njk' %}</itunes:summary>
       <description>{% include 'feed-description.njk' %}</description>
       <content:encoded>
         <![CDATA[{% include 'feed-episode.njk' %}]]>
