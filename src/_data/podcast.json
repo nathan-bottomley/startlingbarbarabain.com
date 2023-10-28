@@ -18,19 +18,15 @@
   "subscriptions": [
     {
       "name": "Apple Podcasts",
-      "url": "~"
-    },
-    {
-      "name": "Google Podcasts",
-      "url": "~"
+      "url": "https://podcasts.apple.com/us/podcast/startling-barbara-bain/id1714034909"
     },
     {
       "name": "Overcast",
-      "url": "~"
+      "url": "https://overcast.fm/itunes1714034909"
     },
     {
       "name": "Spotify",
-      "url": "~"
+      "url": "https://open.spotify.com/show/1E2CWLlX3UViLrVD8af9lw"
     }
   ]
 }
