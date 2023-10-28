@@ -21,7 +21,7 @@
       </media-control-bar>
     </media-controller>
     <figcaption>
-    <a download href="{% episodeURL episodeFile %}">Download</a> &middot; <a target="_blank" href="{% episodeURL episodeFile %}">Open in new window</a> &middot; Duration: {{ episodeDuration }} &middot; Recorded on {{ episodeRecordingDate | date: "%A, %d %B %Y" }}<br>
+    <a download href="{% episodeUrl episodeFile %}">Download</a> &middot; <a target="_blank" href="{% episodeUrl episodeFile %}">Open in new window</a> &middot; Duration: {{ episodeDuration }} &middot; Recorded on {{ episodeRecordingDate | date: "%A, %d %B %Y" }}<br>
     Subscribe:&nbsp;&nbsp;
     {% for subscription in podcast.subscriptions %}
       {% if not forloop.first %} &middot;{% endif %} <a href="{{ subscription.url }}"><strong>{{ subscription.name }}</strong></a>
