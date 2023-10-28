@@ -21,7 +21,7 @@
       </media-control-bar>
     </media-controller>
     <figcaption>
-    Download &middot; Open in new window &middot; Duration: {{ podcastEpisodeDuration }} &middot; Recorded on {{ podcastEpisodeRecordingDate | date: "%A, %d %B %Y" }}<br>
+    Download &middot; Open in new window &middot; Duration: {{ episodeDuration }} &middot; Recorded on {{ episodeRecordingDate | date: "%A, %d %B %Y" }}<br>
     Subscribe:&nbsp;&nbsp;
     {% for subscription in podcast.subscriptions %}
       {% if not forloop.first %} &middot;{% endif %} <a href="{{ subscription.url }}"><strong>{{ subscription.name }}</strong></a>

@@ -48,6 +48,15 @@ module.exports = function (eleventyConfig) {
     return encodeURI(`${episodePrefix}${filename}`)
   })
   eleventyConfig.addShortcode('year', () => DateTime.now().year)
+  eleventyConfig.addFilter('readableDate', date => {
+    const result = DateTime.fromISO(date, {
+      zone: 'UTC'
+    })
+    if (!result.isValid && process.env.ELEVENTY_ENV === 'production') {
+      throw new Error(`Invalid date: ${date}`)
+    }
+    return result.setLocale('en-GB').toLocaleString(DateTime.DATE_HUGE)
+  })
 
   eleventyConfig.addPassthroughCopy('src/img')
   eleventyConfig.addPassthroughCopy('src/css')
