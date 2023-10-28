@@ -32,30 +32,30 @@ eleventyExcludeFromCollections: true
     <pubDate>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</pubDate>
     <lastBuildDate>{% feedLastBuildDate %}</lastBuildDate>
     <generator>{{ eleventy.generator }}</generator>
+    {%- for post in collections.post | reverse %}
+    <item>
+      <title>{{ post.data.title }}</title>
+      <link>{{ post.page.url | absoluteUrl(site.url) }}</link>
+      <pubDate>{{ post.date | dateToRfc3339 }}</pubDate>
+      <itunes:episode>{{ post.data.episodeNumber }}</itunes:episode>
+      <description>{% include 'feed-description.njk' %}</description>
+      <content:encoded>
+        <![CDATA[{% include 'feed-episode.njk' %}]]>
+      </content:encoded>
+      <enclosure url="{% episodeUrl post.data.episodeFile %}" length="{{ post.data.episodeSize }}" type="audio/mp3"></enclosure>
+      <itunes:duration>{{ post.data.episodeDuration }}</itunes:duration>
+      {%- if post.data.guid != undefined %}
+      <guid isPermalink="false">{{ post.data.guid }}</guid>
+      {% else %}
+      <guid isPermalink="true">{{ post.page.url | absoluteUrl(site.url) }}</guid>
+      {% endif -%}
+      {%- if post.data.explicit != undefined %}
+      <itunes:explicit>{{ post.data.explicit }}</itunes:explicit>
+      {% endif -%}
+      {%- if post.data.episodeType != undefined %}
+      <itunes:episodeType>{{ post.data.episodeType }}</itunes:episodeType>
+      {% endif -%}
+    </item>
+    {% endfor -%}
   </channel>
-  {%- for post in collections.post | reverse %}
-  <item>
-    <title>{{ post.data.title }}</title>
-    <link>{{ post.page.url | absoluteUrl(site.url) }}</link>
-    <pubDate>{{ post.date | dateToRfc3339 }}</pubDate>
-    <itunes:episode>{{ post.data.episodeNumber }}</itunes:episode>
-    <description>{% include 'feed-description.njk' %}</description>
-    <content:encoded>
-      <![CDATA[{% include 'feed-episode.njk' %}]]>
-    </content:encoded>
-    <enclosure url="{% episodeUrl post.data.episodeFile %}" length="{{ post.data.episodeSize }}" type="audio/mp3"></enclosure>
-    <itunes:duration>{{ post.data.episodeDuration }}</itunes:duration>
-    {%- if post.data.guid != undefined %}
-    <guid isPermalink="false">{{ post.data.guid }}</guid>
-    {% else %}
-    <guid isPermalink="true">{{ post.page.url | absoluteUrl(site.url) }}</guid>
-    {% endif -%}
-    {%- if post.data.explicit != undefined %}
-    <itunes:explicit>{{ post.data.explicit }}</itunes:explicit>
-    {% endif -%}
-    {%- if post.data.episodeType != undefined %}
-    <itunes:episodeType>{{ post.data.episodeType }}</itunes:episodeType>
-    {% endif -%}
-  </item>
-  {% endfor -%}
 </rss>
