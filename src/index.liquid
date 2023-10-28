@@ -12,8 +12,10 @@ pagination:
   {% render 'episode.liquid', title: post.data.title,
                               date: post.date,
                               postUrl: post.url,
-                              podcastEpisodeRecordingDate: post.data.podcastEpisodeRecordingDate,
+                              episodeRecordingDate: post.data.episodeRecordingDate,
                               episodeNumber: post.data.episodeNumber,
+                              episodeDuration: post.data.episodeDuration,
+                              episodeFile: post.data.episodeFile,
                               content: post.content,
                               space1999: post.data.space1999,
                               podcast: post.data.podcast %}
