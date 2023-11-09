@@ -1,5 +1,9 @@
 <article>
+  {%- if linkInTitle %}
   <h1><a href="{{ postUrl }}">{{ title }}</a></h1>
+  {%- else -%}
+  <h1>{{ title }}</h1>
+  {%- endif -%}
   <p class="space-1999-information">
     Season {{ space1999[episodeNumber].season }},
     Episode {{ space1999[episodeNumber].episode }}.

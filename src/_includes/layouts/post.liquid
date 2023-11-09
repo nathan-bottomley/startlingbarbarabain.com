@@ -1,7 +1,8 @@
 ---
 layout: layouts/base.liquid
 ---
-{% render 'episode.liquid', title: title,
+{% render 'episode.liquid', linkInTitle: false,
+                            title: title,
                             date: date,
                             postUrl: page.url,
                             episodeRecordingDate: episodeRecordingDate,

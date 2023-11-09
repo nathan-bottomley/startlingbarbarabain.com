@@ -90,7 +90,7 @@ header
     }
   }
 
-  a:hover + .dropdown, .dropdown:hover, .dropdown:focus-within
+  a:hover + .dropdown, a:focus-within + .dropdown, .dropdown:hover, .dropdown:focus-within
   {
     visibility: visible;
     display: block;

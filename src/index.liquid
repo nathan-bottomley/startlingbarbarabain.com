@@ -4,12 +4,13 @@ permalink: "/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber | p
 layout: layouts/base
 pagination:
   data: collections.post
-  size: 10
+  size: 12
   reverse: true
   alias: posts
 ---
 {% for post in posts %}
-  {% render 'episode.liquid', title: post.data.title,
+  {% render 'episode.liquid', linkInTitle: true,
+                              title: post.data.title,
                               date: post.date,
                               postUrl: post.url,
                               episodeRecordingDate: post.data.episodeRecordingDate,
