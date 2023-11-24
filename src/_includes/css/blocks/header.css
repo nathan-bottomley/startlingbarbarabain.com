@@ -28,6 +28,7 @@ header
   {
     font-size: var(--size-xxxl);
     color: var(--secondary-text-color);
+    line-height: 0.85;
     
     a, a *
     {
