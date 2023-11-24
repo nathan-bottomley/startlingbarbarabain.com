@@ -27,6 +27,11 @@ body > * + *
   margin-block-start: var(--size-xl);
 }
 
+main > article + article
+{
+  margin-block-start: var(--size-5xl);
+}
+
 /* main colors */
 
 body
