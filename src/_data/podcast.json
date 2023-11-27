@@ -27,6 +27,10 @@
     {
       "name": "Spotify",
       "url": "https://open.spotify.com/show/1E2CWLlX3UViLrVD8af9lw"
+    },
+    {
+      "name": "RSS",
+      "url": "https://startlingbarbarabain.com/feed/podcast"
     }
   ]
 }
