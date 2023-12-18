@@ -21,16 +21,21 @@ class DropdownMenu extends HTMLElement {
   }
 
   connectedCallback () {
+    this.abortController = new AbortController()
     document.addEventListener('click', (event) => {
       if (event.target !== this.toggleButton) {
         this.toggleButton.setAttribute('aria-expanded', 'false')
       }
-    })
+    }, { signal: this.abortController.signal })
     document.addEventListener('keyup', (event) => {
       if (event.key === 'Escape') {
         this.toggleButton.setAttribute('aria-expanded', 'false')
       }
-    })
+    }, { signal: this.abortController.signal })
+  }
+
+  disconnectedCallback () {
+    this.abortController.abort()
   }
 }
 
