@@ -44,7 +44,6 @@ header
 
   img 
   {
-    content-fit: contain;
     max-block-size: calc(2 * var(--size-6xl));
     inline-size: auto; 
     padding-block-start: var(--size-xxs);
@@ -55,51 +54,12 @@ header
 {
   font-size: var(--size-s);
 
-  ul
+  & > ul
   {
     list-style-type: none;
     padding-inline-start: 0;
     margin: 0;
     display: flex;
     gap: var(--size-m);
-  }
-
-  .dropdown
-  {
-    display: flex;
-    flex-direction: column;
-    gap: var(--size-s);
-    visibility: hidden;
-    position: absolute;
-    display: none;
-    padding: var(--size-xs);
-    background-color: var(--barbara-beige);
-    border-radius: var(--size-xxs);
-    box-shadow: 2px 2px 2px 2px var(--barbara-beige-dark);
-    transform: translateX(calc(-1 * var(--size-s))) translateY(calc(-1 / 2 * var(--size-xxs)));
-
-    li
-    {
-      clear: both;
-      width: 100%;
-      padding-inline-start: 0;
-    }
-
-    li + li
-    {
-      margin-block-start: var(--size-xxs);
-    }
-  }
-
-  a:hover + .dropdown, a:focus-within + .dropdown, .dropdown:hover, .dropdown:focus-within
-  {
-    visibility: visible;
-    display: block;
-    cursor: pointer;
-  }
-  
-  .dropdown-trigger:hover
-  {
-    text-decoration: none;
   }
 }

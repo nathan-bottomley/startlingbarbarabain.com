@@ -1,0 +1,32 @@
+dropdown-menu
+{
+  ul
+  {
+    list-style: none;
+    padding: var(--size-xxs);
+    position: absolute;
+    transform: translateX(calc(-1 * var(--size-xxs)));
+    background-color: var(--barbara-beige);
+    box-shadow: 0 0 var(--size-xxs) var(--barbara-brown);
+    border-radius: var(--size-xxs);
+
+    li + li
+    {
+      padding-block-start: var(--size-xxs);
+    }
+  }
+
+  [aria-expanded="false"] + ul
+  {
+    visibility: hidden;
+    opacity: 0;
+    block-size: 0;
+  }
+
+  [aria-expanded="true"] + ul
+  {
+    visibility: visible;
+    opacity: 1;
+    block-size: auto;
+  }
+}

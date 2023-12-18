@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <script src="https://cdn.usefathom.com/script.js" data-site="OAYWAVMU" defer></script>
+    <script src="/js/dropdown-menu.js" type="module"></script>
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}/feed/podcast" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,12 +31,14 @@
     <nav class="main-navigation">
       <ul>
         <li>
-          <a class="dropdown-trigger" href="#">Subscribe</a>
-          <ul class="dropdown">
-            {% for subscription in podcast.subscriptions %}
-            <li><a href="{{ subscription.url }}">{{ subscription.name }}</a></li>
-            {% endfor %}
-          </ul>
+          <dropdown-menu>
+            <a role="button" href="#">Subscribe</a>
+            <ul>
+              {% for subscription in podcast.subscriptions %}
+              <li><a href="{{ subscription.url }}">{{ subscription.name }}</a></li>
+              {% endfor %}
+            </ul>
+          </dropdown-menu>
         </li>
         <li><a href="/podcasts">Our podcasts</a></li>
       </ul>

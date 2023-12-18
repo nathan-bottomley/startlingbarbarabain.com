@@ -58,6 +58,7 @@ module.exports = function (eleventyConfig) {
     return result.setLocale('en-GB').toLocaleString(DateTime.DATE_HUGE)
   })
 
+  eleventyConfig.addPassthroughCopy('src/js')
   eleventyConfig.addPassthroughCopy('src/img')
   eleventyConfig.addPassthroughCopy('src/css')
   eleventyConfig.addPassthroughCopy('src/fonts')
