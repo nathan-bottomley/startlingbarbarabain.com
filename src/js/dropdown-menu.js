@@ -2,7 +2,6 @@
 
 class DropdownMenu extends HTMLElement {
   constructor () {
-    console.log('DropdownMenu constructor')
     super()
     this.toggleButton = this.querySelector('a')
     this.toggleButton.setAttribute('aria-expanded', 'false')
