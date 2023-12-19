@@ -1,12 +1,14 @@
-const markdownIt = require('markdown-it')
-const markdownItAttrs = require('markdown-it-attrs')
-const rssPlugin = require('@11ty/eleventy-plugin-rss')
-const cssPlugin = require('./_11ty/cssPlugin')
-const siteData = require('./src/_data/site')
-const podcastData = require('./src/_data/podcast')
-const { DateTime } = require('luxon')
+import markdownIt from 'markdown-it'
+import markdownItAttrs from 'markdown-it-attrs'
+import rssPlugin from '@11ty/eleventy-plugin-rss'
+import cssPlugin from './_11ty/cssPlugin.js'
+import { DateTime } from 'luxon'
+import { readFileSync } from 'node:fs'
 
-module.exports = function (eleventyConfig) {
+const siteData = JSON.parse(readFileSync('./src/_data/site.json'))
+const podcastData = JSON.parse(readFileSync('./src/_data/site.json'))
+
+export default function (eleventyConfig) {
   const markdownItOptions = {
     html: true,
     typographer: true

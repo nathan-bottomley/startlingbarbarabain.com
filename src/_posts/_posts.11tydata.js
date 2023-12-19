@@ -1,7 +1,7 @@
 const isPageFromFuture = ({ date }) => date.getTime() > Date.now()
 const isProduction = process.env.ELEVENTY_ENV === 'production'
 
-module.exports = {
+export default {
   tags: ['post'],
   permalink: '/{{ episodeNumber }}/',
   layout: 'layouts/post.liquid',

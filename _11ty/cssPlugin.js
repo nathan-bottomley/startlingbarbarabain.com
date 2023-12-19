@@ -1,8 +1,8 @@
-const { bundleAsync, browserslistToTargets } = require('lightningcss')
-const browserslist = require('browserslist')
-const path = require('node:path')
+import { bundleAsync, browserslistToTargets } from 'lightningcss'
+import browserslist from 'browserslist'
+import path from 'node:path'
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
   eleventyConfig.addTemplateFormats('css')
   eleventyConfig.addExtension('css', {
     outputFileExtension: 'css',
