@@ -6,7 +6,7 @@ import { DateTime } from 'luxon'
 import { readFileSync } from 'node:fs'
 
 const siteData = JSON.parse(readFileSync('./src/_data/site.json'))
-const podcastData = JSON.parse(readFileSync('./src/_data/site.json'))
+const podcastData = JSON.parse(readFileSync('./src/_data/podcast.json'))
 
 export default function (eleventyConfig) {
   const markdownItOptions = {
