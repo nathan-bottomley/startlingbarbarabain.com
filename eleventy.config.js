@@ -3,10 +3,10 @@ import markdownItAttrs from 'markdown-it-attrs'
 import rssPlugin from '@11ty/eleventy-plugin-rss'
 import cssPlugin from './_11ty/cssPlugin.js'
 import { DateTime } from 'luxon'
-import { readFileSync } from 'node:fs'
+import { readFile } from 'node:fs/promises'
 
-const siteData = JSON.parse(readFileSync('./src/_data/site.json'))
-const podcastData = JSON.parse(readFileSync('./src/_data/podcast.json'))
+const siteData = JSON.parse(await readFile('./src/_data/site.json'))
+const podcastData = JSON.parse(await readFile('./src/_data/podcast.json'))
 
 export default function (eleventyConfig) {
   const markdownItOptions = {
