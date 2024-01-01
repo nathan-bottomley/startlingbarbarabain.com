@@ -33,7 +33,7 @@ export default function (eleventyConfig) {
       return siteTitle
     }
   })
-  eleventyConfig.addShortcode('feedCopyright', () => {
+  eleventyConfig.addShortcode('copyright', () => {
     const startingYear = podcastData.startingYear
     const currentYear = DateTime.now().year
     if (startingYear === currentYear) {

@@ -26,9 +26,9 @@ eleventyExcludeFromCollections: true
     <itunes:explicit>{{ podcast.explicit }}</itunes:explicit>
     {%- if podcast.type %}
     <itunes:type>{{ podcast.type }}</itunes:type>
-    {% endif %}
+  {% endif %}
     <language>{{ podcast.language }}</language>
-    <copyright>{% feedCopyright %}</copyright>
+    <copyright>{% copyright %}</copyright>
     <pubDate>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</pubDate>
     <lastBuildDate>{% feedLastBuildDate %}</lastBuildDate>
     <generator>{{ eleventy.generator }}</generator>
