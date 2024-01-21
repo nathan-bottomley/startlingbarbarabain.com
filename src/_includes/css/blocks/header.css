@@ -1,14 +1,7 @@
 .strapline
 {
   font-size: var(--size-s);
-  text-align: center;
   padding: var(--size-xxs);
-
-  em
-  {
-    font-style: italic;
-    font-weight: 400;
-  }
 }
 
 header

@@ -2,7 +2,5 @@ footer
 {
   margin-block-start: var(--size-xl);
   padding-block: var(--size-m);
-
-  font-size: var(--size-s);
-  text-align: center;
+  font-size: var(--size-xs);
 }
