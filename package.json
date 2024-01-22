@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx @11ty/eleventy",
+    "build": "ELEVENTY_ENV=production npx @11ty/eleventy",
     "start": "npx @11ty/eleventy --serve",
     "episodes": "s3cmd --exclude=.DS_Store sync src/_episodes/ s3://startlingbarbarabain -Pv",
     "postepisodes": "node script/episodeInfo.js",
@@ -15,14 +15,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "3.0.0-alpha.2",
+    "@11ty/eleventy": "3.0.0-alpha.4",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@tsmx/human-readable": "^2.0.2",
     "browserslist": "^4.22.1",
     "chalk": "^5.3.0",
     "lightningcss": "^1.22.0",
     "luxon": "^3.4.3",
-    "markdown-it": "^13.0.2",
+    "markdown-it": "^14.0.0",
     "markdown-it-attrs": "^4.1.6",
     "mp3-duration": "^1.1.0",
     "standard": "^17.1.0"
