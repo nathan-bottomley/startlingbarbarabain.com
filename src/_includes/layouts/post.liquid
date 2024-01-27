@@ -1,14 +1,4 @@
 ---
 layout: layouts/base.liquid
 ---
-{% render 'episode.liquid', linkInTitle: false,
-                            title: title,
-                            date: date,
-                            postUrl: page.url,
-                            episodeRecordingDate: episodeRecordingDate,
-                            episodeNumber: episodeNumber,
-                            episodeDuration: episodeDuration,
-                            episodeFile: episodeFile,
-                            content: content,
-                            space1999: space1999,
-                            podcast: podcast %}
+{% include 'episode.liquid' %}

@@ -7,17 +7,8 @@ pagination:
   size: 12
   reverse: true
   alias: posts
+linkInTitle: true
 ---
 {% for post in posts %}
-  {% render 'episode.liquid', linkInTitle: true,
-                              title: post.data.title,
-                              date: post.date,
-                              postUrl: post.url,
-                              episodeRecordingDate: post.data.episodeRecordingDate,
-                              episodeNumber: post.data.episodeNumber,
-                              episodeDuration: post.data.episodeDuration,
-                              episodeFile: post.data.episodeFile,
-                              content: post.content,
-                              space1999: post.data.space1999,
-                              podcast: post.data.podcast %}
+  {% include 'episode.liquid' %}
 {% endfor %}
