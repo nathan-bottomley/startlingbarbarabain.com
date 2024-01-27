@@ -7,8 +7,10 @@ import chalk from 'chalk'
 
 // Get duration and size of all the podcast episodes
 
-const episodesDirectory = join(process.cwd(), 'src/_episodes')
-const episodes = await fs.readdir('./src/_episodes')
+const baseEpisodesDirectory = 'episodes'
+
+const episodesDirectory = join(process.cwd(), baseEpisodesDirectory)
+const episodes = await fs.readdir(episodesDirectory)
 
 let totalEpisodes = 0
 let totalDuration = 0

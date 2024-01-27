@@ -3,11 +3,13 @@ import { join } from 'node:path'
 import { Duration } from 'luxon'
 import mp3Duration from 'mp3-duration'
 
+const baseEpisodesDirectory = 'episodes'
+
 const convertMsToDuration = seconds =>
   Duration.fromMillis(seconds * 1000).toFormat('h:mm:ss')
 
-const episodesDirectory = join(process.cwd(), 'src/_episodes')
-const episodes = await fs.readdir('./src/_episodes')
+const episodesDirectory = join(process.cwd(), baseEpisodesDirectory)
+const episodes = await fs.readdir(baseEpisodesDirectory)
 const dataDirectory = join(process.cwd(), 'src/_data')
 
 const episodeInfo = {}
