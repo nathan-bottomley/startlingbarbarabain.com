@@ -7,16 +7,14 @@ export default function (eleventyConfig) {
   eleventyConfig.addExtension('css', {
     outputFileExtension: 'css',
     compile: async (_content, filePath) => {
+      if (path.parse(filePath).name.startsWith('_')) {
+        return
+      }
       return async () => {
         const { code } = await bundleAsync({
           filename: filePath,
           targets: browserslistToTargets(browserslist()),
-          minify: true,
-          resolver: {
-            resolve (specifier, _importer) {
-              return path.resolve('./src/_includes/css', specifier)
-            }
-          }
+          minify: true
         })
         return code
       }
