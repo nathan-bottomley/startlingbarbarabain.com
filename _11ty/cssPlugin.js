@@ -7,9 +7,8 @@ export default function (eleventyConfig) {
   eleventyConfig.addExtension('css', {
     outputFileExtension: 'css',
     compile: async (_content, filePath) => {
-      if (path.parse(filePath).name.startsWith('_')) {
-        return
-      }
+      if (path.parse(filePath).name.startsWith('_')) return
+
       return async () => {
         const { code } = await bundleAsync({
           filename: filePath,
