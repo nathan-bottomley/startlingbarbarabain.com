@@ -38,6 +38,11 @@ body
 {
   color: var(--main-text-color);
   background-color: var(--barbara-beige);
+  background-image: url('../img/moonbase-alpha.svg');
+  background-size: 120vw;
+  background-repeat: no-repeat;
+  background-position-x: -40vw;
+  background-position-y: 50vh;
 }
 
 header, footer
