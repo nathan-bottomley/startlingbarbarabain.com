@@ -35,7 +35,7 @@
     Recorded on {{ post.data.episodeRecordingDate | date: "%A, %e %B %Y" }}<br>
     Subscribe:&nbsp;&nbsp;
     {% for subscription in podcast.subscriptions %}
-      {% if not forloop.first %} &middot;{% endif %} <a href="{{ subscription.url }}"><strong>{{ subscription.name }}</strong></a>
+      {% if not forloop.first %} &middot;{% endif %} <a href="{{ subscription.url }}">{{ subscription.name }}</a>
     {% endfor %}
   </figure>
 </article>

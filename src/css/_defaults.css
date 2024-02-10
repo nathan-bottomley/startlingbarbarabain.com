@@ -9,6 +9,7 @@ body
   min-block-size: 100vh;
   display: flex;
   flex-direction: column;
+  letter-spacing: -0.01em;
 }
 
 body > main 

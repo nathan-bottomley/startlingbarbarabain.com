@@ -1,9 +1,9 @@
 import markdownIt from 'markdown-it'
 import markdownItAttrs from 'markdown-it-attrs'
 import rssPlugin from '@11ty/eleventy-plugin-rss'
-import cssPlugin from './_11ty/cssPlugin.js'
 import { DateTime } from 'luxon'
 import { readFile } from 'node:fs/promises'
+import lightningCSS from '@11tyrocks/eleventy-plugin-lightningcss'
 
 const siteData = JSON.parse(await readFile('./src/_data/site.json'))
 const podcastData = JSON.parse(await readFile('./src/_data/podcast.json'))
@@ -21,7 +21,8 @@ export default function (eleventyConfig) {
       closingSingleTag: 'default' // opt-out of <img/>-style XHTML single tags
     }
   })
-  eleventyConfig.addPlugin(cssPlugin)
+
+  eleventyConfig.addPlugin(lightningCSS);
 
   // shortcodes for podcast feed
 
