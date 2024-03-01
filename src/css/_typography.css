@@ -7,6 +7,13 @@
 @font-face 
 {
   font-family: "Futura Book";
+  src: url('../fonts/FuturaBookOblique.woff2') format('woff2');
+  font-variant: oblique;
+}
+
+@font-face
+{
+  font-family: "Futura Book";
   src: url('../fonts/FuturaBold.woff2') format('woff2'), url('../fonts/FuturaBold.woff') format('woff');
   font-weight: 600;
 }
