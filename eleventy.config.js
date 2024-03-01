@@ -22,7 +22,20 @@ export default function (eleventyConfig) {
     }
   })
 
-  eleventyConfig.addPlugin(lightningCSS);
+  eleventyConfig.addPlugin(lightningCSS)
+
+  // collections
+
+  eleventyConfig.addCollection('podcast', collectionAPI => {
+    const podcasts = collectionAPI.getFilteredByTag('podcast')
+    const podcastsWithPosition = podcasts
+      .filter(podcast => podcast.data.position)
+      .sort((a, b) => a.data.position - b.data.position)
+    const podcastsWithoutPosition = podcasts
+      .filter(podcast => !podcast.data.position)
+      .sort((a, b) => b.data.firstBroadcast - a.data.firstBroadcast)
+    return podcastsWithPosition.concat(podcastsWithoutPosition)
+  })
 
   // shortcodes for podcast feed
 

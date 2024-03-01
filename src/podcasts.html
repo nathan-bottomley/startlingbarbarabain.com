@@ -1,0 +1,15 @@
+---
+title: Our podcasts
+permalink: "/podcasts/"
+layout: layouts/base.liquid
+eleventyImport:
+  collections: ['podcast']
+---
+<h1>{{ title }}</h1>
+{%- for podcast in collections.podcast -%}
+<h2>{{ podcast.data.title }}</h2>
+<section class="podcast-profile">
+  <a class="logo" href="{{ podcast.data.url }}"><img src="{{ podcast.data.image }}"></a>
+  <div>{{ podcast.content }}</div>
+</section>  
+{%- endfor -%}
