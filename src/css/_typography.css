@@ -4,13 +4,6 @@
   src: url('../fonts/FuturaBook.woff2') format('woff2'), url('../fonts/FuturaBook.woff') format('woff');
 }
 
-@font-face 
-{
-  font-family: "Futura Book";
-  src: url('../fonts/FuturaBookOblique.woff2') format('woff2');
-  font-variant: oblique;
-}
-
 @font-face
 {
   font-family: "Futura Book";
