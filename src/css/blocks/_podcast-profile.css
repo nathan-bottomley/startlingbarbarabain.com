@@ -30,7 +30,7 @@ h2 + .podcast-profile
   img
   {
     object-fit: fill;
-    border-radius: var(--size-s);
+    border-radius: var(--size-xs);
   }
 
   p
