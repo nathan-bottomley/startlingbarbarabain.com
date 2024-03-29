@@ -21,7 +21,7 @@ export default {
     imageFile (data) {
       if (data.imageFile) return data.imageFile
 
-      return `${slugify(data.title)}.jpg`
+      return `${slugify(data.title, { lower: true })}.jpg`
     },
     episodeFile: data => `SBB ${data.episodeNumber}, ${data.title}.mp3`,
     episodeSize: data => {

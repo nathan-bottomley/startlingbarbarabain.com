@@ -14,7 +14,7 @@
     <meta name="generator" content="{{ eleventy.generator }}">
     <meta name="apple-itunes-app" content="app-id=1714034909">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    {%- render 'social-media-metadata.liquid', site: site, title: title, tags: tags, content: content -%}
+{% include 'social-media-metadata.liquid' -%}
     <title>{% pageTitle title %}</title>
   </head>
   <body>
