@@ -19,6 +19,22 @@ article
     font-family: "Futura Book", sans-serif;
     font-size: var(--size-s);
     text-transform: uppercase;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--size-s);
+    align-items: flex-end;
+
+    img 
+    {
+      max-block-size: 250px;
+      block-size: auto;
+      inline-size: auto; 
+      object-fit: cover;
+      flex-shrink: 0;
+      border-radius: var(--size-xs);
+    }
   }
 
   .podcast-episode-information, figcaption

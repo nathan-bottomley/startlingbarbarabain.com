@@ -1,3 +1,5 @@
+import slugify from 'slugify'
+
 const isPageFromFuture = ({ date }) => date.getTime() > Date.now()
 const isProduction = process.env.ELEVENTY_ENV === 'production'
 
@@ -15,6 +17,11 @@ export default {
       const { eleventyExcludeFromCollections, page } = data
       if (isPageFromFuture(page) && isProduction) return true
       return eleventyExcludeFromCollections
+    },
+    imageFile (data) {
+      if (data.imageFile) return data.imageFile
+
+      return `${slugify(data.title)}.jpg`
     },
     episodeFile: data => `SBB ${data.episodeNumber}, ${data.title}.mp3`,
     episodeSize: data => {

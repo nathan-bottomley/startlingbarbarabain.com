@@ -1,6 +1,9 @@
 ---
 title: Breakaway
 date: 2023-10-28
+imageAlt: >-
+  Barbara stands in front of a window in sick bay, her eyes wide and her lips
+  pursed. She looks concerned.
 episodeNumber: 1
 episodeRecordingDate: 2023-10-27
 ---

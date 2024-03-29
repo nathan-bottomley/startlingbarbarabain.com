@@ -5,11 +5,15 @@
   {%- else -%}
   <h1>{{ post.data.title }}</h1>
   {%- endif -%}
-  <p class="space-1999-information">
-    Season {{ space1999[post.data.episodeNumber].season }},
-    Episode {{ space1999[post.data.episodeNumber].episode }}.
-    First broadcast on {{ space1999[post.data.episodeNumber].broadcastDate | date: "%A, %e %B %Y" }}.
-  </p>
+
+  <section class="space-1999-information">
+    <img src="/img/{{ post.data.imageFile }}" alt="{{ post.data.imageAlt }}">
+    <p>
+      Season {{ space1999[post.data.episodeNumber].season }},
+      Episode {{ space1999[post.data.episodeNumber].episode }}.<br>
+      First broadcast on {{ space1999[post.data.episodeNumber].broadcastDate | date: "%A, %e %B %Y" }}.
+    </section>
+  </section>
   <p class="podcast-episode-information">
     {{ post.date | date: "%A, %e %B %Y" }} &middot; Episode {{ post.data.episodeNumber }}
   </p>

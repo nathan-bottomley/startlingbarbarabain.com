@@ -1,6 +1,9 @@
 ---
 title: Force of Life
 date: 2023-11-25
+imageAlt: >-
+  In a darkened sick bay, Barbara is crouched, looking up at us. Lying
+  on the ground in front of here is the frozen body of a bearded young man.
 episodeNumber: 2
 episodeRecordingDate: 2023-11-24
 ---

@@ -1,6 +1,10 @@
 ---
 title: War Games
 date: 2024-02-12
+imageAlt: >-
+  Barbara is a a glass tank in a brightly and colourfully lit room.
+  She is wearing elaborate pink satin sci-fi robes and looking off into the\
+  distance. In the background is an alien man with a massive domed head.
 episodeNumber: 4
 episodeRecordingDate: 2024-02-11
 ---

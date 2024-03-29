@@ -1,6 +1,10 @@
 ---
 title: Collision Course
 date: 2023-12-30
+imageAlt: >-
+  At the end of the episode, Barbara and Martin stand at a window. Martin is 
+  wearing a skimpy robe, revealing an unnecessary amount of chest hair. He's 
+  not making eye contact with Barbara, who is looking at him with concern.
 episodeNumber: 3
 episodeRecordingDate: 2023-12-29
 ---
