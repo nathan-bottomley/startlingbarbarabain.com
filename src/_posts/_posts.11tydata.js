@@ -2,18 +2,19 @@ import slugify from 'slugify'
 
 const isPageFromFuture = ({ date }) => date.getTime() > Date.now()
 const isProduction = process.env.ELEVENTY_ENV === 'production'
+const episodeFilePattern = /SBB (?<episodeNumber>\d+),\s.*\.mp3/
 
 export default {
   tags: ['post'],
   permalink: '/{{ episodeNumber }}/',
   layout: 'layouts/post.liquid',
   eleventyComputed: {
-    permalink: data => {
+    permalink (data) {
       const { permalink, page } = data
       if (isPageFromFuture(page) && isProduction) return false
       return permalink
     },
-    eleventyExcludeFromCollections: data => {
+    eleventyExcludeFromCollections (data) {
       const { eleventyExcludeFromCollections, page } = data
       if (isPageFromFuture(page) && isProduction) return true
       return eleventyExcludeFromCollections
@@ -23,17 +24,17 @@ export default {
 
       return `${slugify(data.title, { lower: true })}.jpg`
     },
-    episodeFile: data => `SBB ${data.episodeNumber}, ${data.title}.mp3`,
-    episodeSize: data => {
-      if (isProduction && !data.episodeInfo[data.episodeFile]) {
-        console.error(`Episode size data for ${data.title} not found`)
+    episodeFile (data) {
+      for (const file of Object.keys(data.episodeInfo)) {
+        if (file.match(episodeFilePattern).groups.episodeNumber === data.episodeNumber.toString()) {
+          return file
+        }
       }
+    },
+    episodeSize (data) {
       return data.episodeInfo[data.episodeFile]?.size
     },
-    episodeDuration: data => {
-      if (isProduction && !data.episodeInfo[data.episodeFile]) {
-        console.error(`Episode duration data for ${data.title} not found`)
-      }
+    episodeDuration (data) {
       return data.episodeInfo[data.episodeFile]?.duration
     }
   }

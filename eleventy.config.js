@@ -7,6 +7,7 @@ import lightningCSS from '@11tyrocks/eleventy-plugin-lightningcss'
 
 const siteData = JSON.parse(await readFile('./src/_data/site.json'))
 const podcastData = JSON.parse(await readFile('./src/_data/podcast.json'))
+const isProduction = process.env.ELEVENTY_ENV === 'production'
 
 export default function (eleventyConfig) {
   const markdownItOptions = {
@@ -59,7 +60,15 @@ export default function (eleventyConfig) {
   eleventyConfig.addShortcode('feedLastBuildDate', () =>
     DateTime.now().toRFC2822()
   )
-  eleventyConfig.addShortcode('episodeUrl', filename => {
+  eleventyConfig.addShortcode('episodeUrl', function (filename) {
+    if (filename === undefined) {
+      const errorMessage = `Episode filename missing on ${this.page.inputPath}`
+      if (isProduction) {
+        throw new Error(errorMessage)
+      } else {
+        console.error(errorMessage)
+      }
+    }
     const episodePrefix = podcastData.episodePrefix
     return encodeURI(`${episodePrefix}${filename}`)
   })
