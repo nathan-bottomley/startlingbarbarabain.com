@@ -4,6 +4,7 @@ import rssPlugin from '@11ty/eleventy-plugin-rss'
 import { DateTime } from 'luxon'
 import { readFile } from 'node:fs/promises'
 import lightningCSS from '@11tyrocks/eleventy-plugin-lightningcss'
+import { eleventyImageTransformPlugin } from '@11ty/eleventy-img'
 
 const siteData = JSON.parse(await readFile('./src/_data/site.json'))
 const podcastData = JSON.parse(await readFile('./src/_data/podcast.json'))
@@ -24,6 +25,15 @@ export default function (eleventyConfig) {
   })
 
   eleventyConfig.addPlugin(lightningCSS)
+
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    formats: ['webp', 'jpeg'],
+    widths: [331, 662],
+    defaultAttributes: {
+      decoding: 'async',
+      sizes: '(min-width: 400px) 331px, calc(78.75vw + 32px)'
+    }
+  })
 
   // collections
 
