@@ -1,31 +1,15 @@
-import markdownIt from 'markdown-it'
-import markdownItAttrs from 'markdown-it-attrs'
-import rssPlugin from '@11ty/eleventy-plugin-rss'
-import { DateTime } from 'luxon'
 import { readFile } from 'node:fs/promises'
+import podcastPlugin from './_11ty/podcast-plugin.js'
 import lightningCSS from '@11tyrocks/eleventy-plugin-lightningcss'
 import { eleventyImageTransformPlugin } from '@11ty/eleventy-img'
+import markdownIt from 'markdown-it'
+import markdownItAttrs from 'markdown-it-attrs'
 
 const siteData = JSON.parse(await readFile('./src/_data/site.json'))
-const podcastData = JSON.parse(await readFile('./src/_data/podcast.json'))
-const isProduction = process.env.ELEVENTY_ENV === 'production'
 
 export default function (eleventyConfig) {
-  const markdownItOptions = {
-    html: true,
-    typographer: true
-  }
-  const markdownLibrary = markdownIt(markdownItOptions).use(markdownItAttrs)
-  eleventyConfig.setLibrary('md', markdownLibrary)
-
-  eleventyConfig.addPlugin(rssPlugin, {
-    posthtmlRenderOptions: {
-      closingSingleTag: 'default' // opt-out of <img/>-style XHTML single tags
-    }
-  })
-
+  eleventyConfig.addPlugin(podcastPlugin)
   eleventyConfig.addPlugin(lightningCSS)
-
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: ['webp', 'jpeg'],
     widths: [331, 662],
@@ -35,7 +19,11 @@ export default function (eleventyConfig) {
     }
   })
 
-  // collections
+  const markdownLibrary = markdownIt({
+    html: true,
+    typographer: true
+  }).use(markdownItAttrs)
+  eleventyConfig.setLibrary('md', markdownLibrary)
 
   eleventyConfig.addCollection('podcast', collectionAPI => {
     const podcasts = collectionAPI.getFilteredByTag('podcast')
@@ -48,8 +36,6 @@ export default function (eleventyConfig) {
     return podcastsWithPosition.concat(podcastsWithoutPosition)
   })
 
-  // shortcodes for podcast feed
-
   eleventyConfig.addShortcode('pageTitle', pageTitle => {
     const siteTitle = siteData.title
     if (pageTitle && pageTitle.length > 0 && pageTitle !== siteTitle) {
@@ -57,40 +43,6 @@ export default function (eleventyConfig) {
     } else {
       return siteTitle
     }
-  })
-  eleventyConfig.addShortcode('copyright', () => {
-    const startingYear = podcastData.startingYear
-    const currentYear = DateTime.now().year
-    if (startingYear === currentYear) {
-      return `© ${startingYear} ${podcastData.copyright}`
-    } else {
-      return `© ${startingYear}–${currentYear} ${podcastData.copyright}`
-    }
-  })
-  eleventyConfig.addShortcode('feedLastBuildDate', () =>
-    DateTime.now().toRFC2822()
-  )
-  eleventyConfig.addShortcode('episodeUrl', function (filename) {
-    if (filename === undefined) {
-      const errorMessage = `Episode filename missing on ${this.page.inputPath}`
-      if (isProduction) {
-        throw new Error(errorMessage)
-      } else {
-        console.error(errorMessage)
-      }
-    }
-    const episodePrefix = podcastData.episodePrefix
-    return encodeURI(`${episodePrefix}${filename}`)
-  })
-  eleventyConfig.addShortcode('year', () => DateTime.now().year)
-  eleventyConfig.addFilter('readableDate', date => {
-    const result = DateTime.fromISO(date, {
-      zone: 'UTC'
-    })
-    if (!result.isValid && process.env.ELEVENTY_ENV === 'production') {
-      throw new Error(`Invalid date: ${date}`)
-    }
-    return result.setLocale('en-GB').toLocaleString(DateTime.DATE_HUGE)
   })
 
   eleventyConfig.addPassthroughCopy('src/js')
