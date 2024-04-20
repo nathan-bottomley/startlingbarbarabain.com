@@ -11,11 +11,11 @@
     <p>
       Season {{ space1999[post.data.episodeNumber].season }},
       Episode {{ space1999[post.data.episodeNumber].episode }}.<br>
-      First broadcast on {{ space1999[post.data.episodeNumber].broadcastDate | date: "%A, %e %B %Y" }}.
+      First broadcast on {{ space1999[post.data.episodeNumber].broadcastDate | readableDate }}.
     </section>
   </section>
   <p class="podcast-episode-information">
-    {{ post.date | date: "%A, %e %B %Y" }} &middot; Episode {{ post.data.episodeNumber }}
+    {{ post.date | readableDate }} &middot; Episode {{ post.data.episodeNumber }}
   </p>
 
   {{ post.content }}
@@ -36,7 +36,7 @@
     <a download href="{% episodeUrl post.data.episodeFile %}">Download</a> &middot; 
     <a target="_blank" href="{% episodeUrl post.data.episodeFile %}">Open in new window</a> &middot; 
     Duration: {{ post.data.episodeDuration }} &middot; 
-    Recorded on {{ post.data.episodeRecordingDate | date: "%A, %e %B %Y" }}<br>
+    Recorded on {{ post.data.episodeRecordingDate | readableDate }}<br>
     Subscribe:&nbsp;&nbsp;
     {% for subscription in podcast.subscriptions %}
       {% if not forloop.first %} &middot;{% endif %} <a href="{{ subscription.url }}">{{ subscription.name }}</a>

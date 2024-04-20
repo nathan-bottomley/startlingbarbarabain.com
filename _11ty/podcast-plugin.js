@@ -25,25 +25,20 @@ export default function (eleventyConfig) {
     DateTime.now().toRFC2822()
   )
   eleventyConfig.addShortcode('episodeUrl', function (filename) {
-    if (filename === undefined) {
-      const errorMessage = `Episode filename missing on ${this.page.inputPath}`
-      if (isProduction) {
-        throw new Error(errorMessage)
-      } else {
-        console.error(errorMessage)
-      }
+    if (filename === undefined && isProduction) {
+      console.error(`Episode filename missing on ${this.page.inputPath}`)
     }
     const episodePrefix = podcastData.episodePrefix
     return encodeURI(`${episodePrefix}${filename}`)
   })
   eleventyConfig.addShortcode('year', () => DateTime.now().year)
-  eleventyConfig.addFilter('readableDate', date => {
+  eleventyConfig.addFilter('readableDate', function (date) {
+    if (date instanceof Date) {
+      date = date.toISOString()
+    }
     const result = DateTime.fromISO(date, {
       zone: 'UTC'
     })
-    if (!result.isValid && process.env.ELEVENTY_ENV === 'production') {
-      throw new Error(`Invalid date: ${date}`)
-    }
     return result.setLocale('en-GB').toLocaleString(DateTime.DATE_HUGE)
   })
 }
