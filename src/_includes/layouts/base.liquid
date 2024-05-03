@@ -32,8 +32,8 @@
       <ul>
         <li>
           <dropdown-menu>
-            <a role="button" href="#">Subscribe</a>
-            <ul>
+            <a role="button" href="#" class="dropdown-menu-toggle-button">Subscribe</a>
+            <ul class="dropdown-menu">
               {% for subscription in podcast.subscriptions %}
               <li><a href="{{ subscription.url }}">{{ subscription.name }}</a></li>
               {% endfor %}

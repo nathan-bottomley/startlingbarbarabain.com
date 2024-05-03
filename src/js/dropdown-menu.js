@@ -3,38 +3,60 @@
 class DropdownMenu extends HTMLElement {
   constructor () {
     super()
-    this.toggleButton = this.querySelector('a')
-    this.toggleButton.setAttribute('aria-expanded', 'false')
-    this.menu = this.querySelector('ul')
+    this.toggleButton = this.querySelector('.dropdown-menu-toggle-button')
+    this.hideMenu()
+    this.menu = this.querySelector('.dropdown-menu')
     this.menuID = crypto.randomUUID()
     this.menu.setAttribute('id', this.menuID)
     this.toggleButton.setAttribute('aria-controls', this.menuID)
-    this.toggleButton.addEventListener('click', (event) => {
-      if (this.toggleButton.getAttribute('aria-expanded') === 'false') {
-        this.toggleButton.setAttribute('aria-expanded', 'true')
-      } else {
-        this.toggleButton.setAttribute('aria-expanded', 'false')
-      }
-      event.preventDefault()
-    })
+    this.toggleButton.addEventListener('click', this)
   }
 
   connectedCallback () {
-    this.abortController = new AbortController()
-    document.addEventListener('click', (event) => {
-      if (event.target !== this.toggleButton) {
-        this.toggleButton.setAttribute('aria-expanded', 'false')
-      }
-    }, { signal: this.abortController.signal })
-    document.addEventListener('keyup', (event) => {
-      if (event.key === 'Escape') {
-        this.toggleButton.setAttribute('aria-expanded', 'false')
-      }
-    }, { signal: this.abortController.signal })
+    document.addEventListener('click', this)
+    document.addEventListener('keyup', this)
   }
 
   disconnectedCallback () {
-    this.abortController.abort()
+    document.removeEventListener('click', this)
+    document.removeEventListener('keyup', this)
+  }
+
+  handleEvent (event) {
+    if (event.currentTarget === document &&
+        event.type === 'click' &&
+        event.target !== this.toggleButton) {
+      this.hideMenu()
+    }
+    if (event.currentTarget === this.toggleButton &&
+        event.type === 'click' &&
+        event.target === this.toggleButton) {
+      this.toggleMenu()
+      event.preventDefault()
+    }
+    if (event.type === 'keyup' && event.key === 'Escape') {
+      this.hideMenu()
+    }
+  }
+
+  get menuVisible () {
+    return this.toggleButton.getAttribute('aria-expanded') === 'true'
+  }
+
+  showMenu () {
+    this.toggleButton.setAttribute('aria-expanded', 'true')
+  }
+
+  hideMenu () {
+    this.toggleButton.setAttribute('aria-expanded', 'false')
+  }
+
+  toggleMenu () {
+    if (this.menuVisible) {
+      this.hideMenu()
+    } else {
+      this.showMenu()
+    }
   }
 }
 
