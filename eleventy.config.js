@@ -4,6 +4,7 @@ import lightningCSS from '@11tyrocks/eleventy-plugin-lightningcss'
 import { eleventyImageTransformPlugin } from '@11ty/eleventy-img'
 import markdownIt from 'markdown-it'
 import markdownItAttrs from 'markdown-it-attrs'
+import draftsPlugin from './_11ty/drafts.js'
 
 const siteData = JSON.parse(await readFile('./src/_data/site.json'))
 
@@ -18,6 +19,7 @@ export default function (eleventyConfig) {
       sizes: '(min-width: 400px) 331px, calc(78.75vw + 32px)'
     }
   })
+  eleventyConfig.addPlugin(draftsPlugin)
 
   const markdownLibrary = markdownIt({
     html: true,

@@ -4,8 +4,6 @@ import rssPlugin from '@11ty/eleventy-plugin-rss'
 
 const podcastData = JSON.parse(await readFile('./src/_data/podcast.json'))
 
-const isProduction = process.env.ELEVENTY_ENV === 'production'
-
 export default function (eleventyConfig) {
   eleventyConfig.addPlugin(rssPlugin, {
     posthtmlRenderOptions: {
@@ -25,9 +23,6 @@ export default function (eleventyConfig) {
     DateTime.now().toRFC2822()
   )
   eleventyConfig.addShortcode('episodeUrl', function (filename) {
-    if (filename === undefined && isProduction) {
-      console.error(`Episode filename missing on ${this.page.inputPath}`)
-    }
     const episodePrefix = podcastData.episodePrefix
     return encodeURI(`${episodePrefix}${filename}`)
   })
