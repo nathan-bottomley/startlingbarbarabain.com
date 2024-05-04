@@ -2,6 +2,7 @@
 {
   font-family: "Futura Book";
   src: url('../fonts/FuturaBook.woff2') format('woff2'), url('../fonts/FuturaBook.woff') format('woff');
+  font-display: swap;
 }
 
 @font-face
@@ -9,12 +10,14 @@
   font-family: "Futura Book";
   src: url('../fonts/FuturaBold.woff2') format('woff2'), url('../fonts/FuturaBold.woff') format('woff');
   font-weight: 600;
+  font-display: swap;
 }
 
 @font-face 
 {
   font-family: "Futura Black";
   src: url('../fonts/FuturaBlack.woff2') format('woff2'), url('../fonts/FuturaBlack.woff') format('woff');
+  font-display: swap;
 }
 
 body
