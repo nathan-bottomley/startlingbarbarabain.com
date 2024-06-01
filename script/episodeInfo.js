@@ -3,7 +3,7 @@ import { join } from 'node:path'
 import { Duration } from 'luxon'
 import mp3Duration from 'mp3-duration'
 
-const convertMsToDuration = seconds =>
+const convertSecondsToDuration = seconds =>
   Duration.fromMillis(seconds * 1000).toFormat('h:mm:ss')
 
 const episodesDirectory = join(process.cwd(), 'episodes')
@@ -20,7 +20,7 @@ for (const episode of episodes) {
   const duration = await mp3Duration(buffer)
   episodeInfo[episode] = {
     size: episodeStats.size,
-    duration: convertMsToDuration(duration)
+    duration: convertSecondsToDuration(duration)
   }
 }
 
