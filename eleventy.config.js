@@ -12,7 +12,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(podcastPlugin)
   eleventyConfig.addPlugin(lightningCSS)
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-    formats: ['webp', 'jpeg'],
+    formats: ['avif', 'webp', 'jpeg'],
     widths: [331, 662],
     defaultAttributes: {
       decoding: 'async',
