@@ -4,7 +4,6 @@ import lightningCSS from '@11tyrocks/eleventy-plugin-lightningcss'
 import { eleventyImageTransformPlugin } from '@11ty/eleventy-img'
 import markdownIt from 'markdown-it'
 import markdownItAttrs from 'markdown-it-attrs'
-import draftsPlugin from './_11ty/drafts.js'
 
 const siteData = JSON.parse(await readFile('./src/_data/site.json'))
 
@@ -19,8 +18,22 @@ export default function (eleventyConfig) {
       sizes: '(min-width: 400px) 331px, calc(78.75vw + 32px)'
     }
   })
-  eleventyConfig.addPlugin(draftsPlugin)
 
+  let hasLoggedAboutDrafts = false
+  eleventyConfig.addPreprocessor('drafts', 'md', (data, content) => {
+    if (!hasLoggedAboutDrafts) {
+      if (process.env.BUILD_DRAFTS) {
+        console.log('Including drafts.')
+      } else {
+        console.log('Excluding drafts.')
+      }
+      hasLoggedAboutDrafts = true
+    }
+    if (data.draft && !process.env.BUILD_DRAFTS) {
+      return false
+    }
+  })
+  
   const markdownLibrary = markdownIt({
     html: true,
     typographer: true
