@@ -20,7 +20,7 @@ export default function (eleventyConfig) {
   })
 
   let hasLoggedAboutDrafts = false
-  eleventyConfig.addPreprocessor('drafts', 'md', (data, content) => {
+  eleventyConfig.addPreprocessor('drafts', 'md', (data, _content) => {
     if (!hasLoggedAboutDrafts) {
       if (process.env.BUILD_DRAFTS) {
         console.log('Including drafts.')
@@ -33,7 +33,7 @@ export default function (eleventyConfig) {
       return false
     }
   })
-  
+
   const markdownLibrary = markdownIt({
     html: true,
     typographer: true
