@@ -64,10 +64,10 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/img')
   eleventyConfig.addPassthroughCopy('src/fonts')
   eleventyConfig.addPassthroughCopy({ 'src/_icons': '/' })
+}
 
-  return {
-    dir: {
-      input: 'src'
-    }
+export const config = {
+  dir: {
+    input: 'src'
   }
 }
