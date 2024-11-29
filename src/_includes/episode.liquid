@@ -7,7 +7,11 @@
   {%- endif -%}
 
   <section class="space-1999-information">
-    <img src="/img/{{ post.data.imageFile }}" alt="{{ post.data.imageAlt }}">
+    <is-land on:media="(prefers-reduced-motion: no-preference)">
+      <snow-fall style="--snow-fall-size: 5px">
+      <img src="/img/{{ post.data.imageFile }}" alt="{{ post.data.imageAlt }}">
+      </snow-fall>
+    </is-land>
     <p>
       Season {{ space1999[post.data.episodeNumber].season }},
       Episode {{ space1999[post.data.episodeNumber].episode }}.<br>
@@ -33,9 +37,9 @@
       </media-control-bar>
     </media-controller>
     <figcaption>
-    <a download href="{% episodeUrl post.data.episodeFile %}">Download</a> &middot; 
-    <a target="_blank" href="{% episodeUrl post.data.episodeFile %}">Open in new window</a> &middot; 
-    Duration: {{ post.data.episodeDuration }} &middot; 
+    <a download href="{% episodeUrl post.data.episodeFile %}">Download</a> &middot;
+    <a target="_blank" href="{% episodeUrl post.data.episodeFile %}">Open in new window</a> &middot;
+    Duration: {{ post.data.episodeDuration }} &middot;
     Recorded on {{ post.data.episodeRecordingDate | readableDate }}<br>
     Subscribe:&nbsp;&nbsp;
     {% for subscription in podcast.subscriptions %}
