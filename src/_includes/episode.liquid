@@ -24,18 +24,9 @@
 
   {{ post.content }}
   <figure type="audio">
-    <media-controller audio>
-      <audio preload="none" slot="media">
-        <source src="{% episodeUrl post.data.episodeFile %}" type="audio/mp3">
-      </audio>
-      <media-control-bar>
-        <media-play-button></media-play-button>
-        <media-time-display showduration></media-time-display>
-        <media-time-range></media-time-range>
-        <media-mute-button></media-mute-button>
-        <media-volume-range></media-volume-range>
-      </media-control-bar>
-    </media-controller>
+    <audio preload="none">
+      <source src="{% episodeUrl post.data.episodeFile %}" type="audio/mp3">
+    </audio>
     <figcaption>
     <a download href="{% episodeUrl post.data.episodeFile %}">Download</a> &middot;
     <a target="_blank" href="{% episodeUrl post.data.episodeFile %}">Open in new window</a> &middot;

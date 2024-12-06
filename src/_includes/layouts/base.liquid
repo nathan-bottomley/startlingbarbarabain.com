@@ -11,7 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="/css/index.css">
-    <script type="module" src="https://cdn.jsdelivr.net/npm/media-chrome@1/+esm"></script>
+    <link rel="stylesheet" href="https://cdn.vidstack.io/player.css" />
+    <link rel="stylesheet" href="https://cdn.vidstack.io/plyr.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="generator" content="{{ eleventy.generator }}">
     <meta name="apple-itunes-app" content="app-id=1714034909">
@@ -51,5 +52,12 @@
     <footer>
       <p>{% copyright %}. Website created by Nathan Bottomley.</p>
     </footer>
+    <script type="module">
+      import { Plyr } from 'https://cdn.vidstack.io/plyr'
+
+      for (const audio of document.querySelectorAll('audio')) {
+        const player = new Plyr(audio)
+      }
+    </script>
   </body>
 </html>
