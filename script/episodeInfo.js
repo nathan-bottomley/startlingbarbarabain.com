@@ -20,6 +20,7 @@ for (const episode of episodes) {
   const duration = await mp3Duration(buffer)
   episodeInfo[episode] = {
     size: episodeStats.size,
+    durationInSeconds: duration,
     duration: convertSecondsToDuration(duration)
   }
 }

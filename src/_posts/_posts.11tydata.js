@@ -24,6 +24,9 @@ export default {
     },
     episodeDuration (data) {
       return data.episodeInfo[data.episodeFile]?.duration
+    },
+    episodeDurationInSeconds (data) {
+      return data.episodeInfo[data.episodeFile]?.durationInSeconds
     }
   }
 }

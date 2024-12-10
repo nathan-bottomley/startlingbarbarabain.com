@@ -24,7 +24,7 @@
 
   {{ post.content }}
   <figure type="audio">
-    <audio preload="none">
+    <audio preload="none" data-preload="none" duration="{{ post.data.episodeDurationInSeconds }}">
       <source src="{% episodeUrl post.data.episodeFile %}" type="audio/mp3">
     </audio>
     <figcaption>
@@ -34,7 +34,7 @@
     Recorded on {{ post.data.episodeRecordingDate | readableDate }}<br>
     Subscribe:&nbsp;&nbsp;
     {% for subscription in podcast.subscriptions %}
-      {% if not forloop.first %} &middot;{% endif %} <a href="{{ subscription.url }}">{{ subscription.name }}</a>
-    {% endfor %}
+      {%- if not forloop.first %} &middot;{% endif -%} <a href="{{ subscription.url }}">{{ subscription.name }}</a>
+    {% endfor -%}
   </figure>
 </article>

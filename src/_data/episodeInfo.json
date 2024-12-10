@@ -1,38 +1,47 @@
 {
   "SBB 1, Breakaway.mp3": {
     "size": 68725298,
+    "durationInSeconds": 4102.74,
     "duration": "1:08:22"
   },
   "SBB 2, Force of Life.mp3": {
     "size": 59489577,
+    "durationInSeconds": 3677.466,
     "duration": "1:01:17"
   },
   "SBB 3, Collision Course.mp3": {
     "size": 60367738,
+    "durationInSeconds": 3580.395,
     "duration": "0:59:40"
   },
   "SBB 4, War Games.mp3": {
     "size": 60416689,
+    "durationInSeconds": 3583.451,
     "duration": "0:59:43"
   },
   "SBB 5, Death’s Other Dominion.mp3": {
     "size": 60309229,
+    "durationInSeconds": 3576.738,
     "duration": "0:59:36"
   },
   "SBB 6, Voyager’s Return.mp3": {
     "size": 61396397,
+    "durationInSeconds": 3644.682,
     "duration": "1:00:44"
   },
   "SBB 7, Alpha Child.mp3": {
     "size": 60392451,
+    "durationInSeconds": 3581.936,
     "duration": "0:59:41"
   },
   "SBB 8, Dragon’s Domain.mp3": {
     "size": 63148418,
+    "durationInSeconds": 3754.188,
     "duration": "1:02:34"
   },
   "SBB 9, Mission of the Darians.mp3": {
     "size": 64417000,
+    "durationInSeconds": 3833.469,
     "duration": "1:03:53"
   }
 }
