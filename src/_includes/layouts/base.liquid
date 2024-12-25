@@ -18,7 +18,7 @@
     <meta name="apple-itunes-app" content="app-id=1714034909">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 {% include 'social-media-metadata.liquid' -%}
-    <title>{% pageTitle title %}</title>
+    <title>{{ pageTitle }}</title>
   </head>
   <body>
     <p class="strapline">A <em>Space: 1999</em> commentary podcast from the makers of
@@ -50,7 +50,7 @@
     {{ content }}
     </main>
     <footer>
-      <p>{% copyright %}. Website created by Nathan Bottomley.</p>
+      <p>{{ copyrightNotice }}. Website created by Nathan Bottomley.</p>
     </footer>
     <script type="module">
       import { Plyr } from 'https://cdn.vidstack.io/plyr'

@@ -1,4 +1,4 @@
-{% unless post %}{% assign post = collections.post | getCollectionItem %}{% endunless %}
+{% unless post %}{% assign post = collections.podcastEpisode | getCollectionItem %}{% endunless %}
 <article>
   {%- if linkInTitle %}
   <h1><a href="{{ post.url }}">{{ post.data.title }}</a></h1>
@@ -13,28 +13,28 @@
       </snow-fall>
     </is-land>
     <p>
-      Season {{ space1999[post.data.episodeNumber].season }},
-      Episode {{ space1999[post.data.episodeNumber].episode }}.<br>
-      First broadcast on {{ space1999[post.data.episodeNumber].broadcastDate | readableDate }}.
+      Season {{ space1999[post.data.episode.episodeNumber].season }},
+      Episode {{ space1999[post.data.episode.episodeNumber].episode }}.<br>
+      First broadcast on {{ space1999[post.data.episode.episodeNumber].broadcastDate | readableDate }}.
     </section>
   </section>
   <p class="podcast-episode-information">
-    {{ post.date | readableDate }} &middot; Episode {{ post.data.episodeNumber }}
+    {{ post.date | readableDate }} &middot; Episode {{ post.data.episode.episodeNumber }}
   </p>
 
   {{ post.content }}
   <figure type="audio">
-    <audio preload="none" data-preload="none" duration="{{ post.data.episodeDurationInSeconds }}">
-      <source src="{% episodeUrl post.data.episodeFile %}" type="audio/mp3">
+    <audio preload="none" data-preload="none" duration="{{ post.data.episode.duration }}">
+      <source src="{{ post.data.episode.url }}" type="audio/mp3">
     </audio>
     <figcaption>
-    <a download href="{% episodeUrl post.data.episodeFile %}">Download</a> &middot;
-    <a target="_blank" href="{% episodeUrl post.data.episodeFile %}">Open in new window</a> &middot;
-    Duration: {{ post.data.episodeDuration }} &middot;
-    Recorded on {{ post.data.episodeRecordingDate | readableDate }}<br>
+    <a download href="{{ post.data.episode.url }}">Download</a> &middot;
+    <a target="_blank" href="{{ post.data.episode.url }}">Open in new window</a> &middot;
+    Duration: {{ post.data.episode.duration | readableDuration }} &middot;
+    Recorded on {{ post.data.episode.recordingDate | readableDate }}<br>
     Subscribe:&nbsp;&nbsp;
     {% for subscription in podcast.subscriptions %}
-      {%- if not forloop.first %} &middot;{% endif -%} <a href="{{ subscription.url }}">{{ subscription.name }}</a>
+      {%- if not forloop.first %} &middot;{% endif -%}&nbsp;<a href="{{ subscription.url }}">{{ subscription.name }}</a>
     {% endfor -%}
   </figure>
 </article>

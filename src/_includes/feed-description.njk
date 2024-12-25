@@ -1,3 +1,3 @@
-{% set space1999Episode = space1999[post.data.episodeNumber] -%}
+{% set space1999Episode = space1999[post.data.episode.episodeNumber] -%}
 {{ post.data.title }}. Season {{ space1999Episode.season }}, Episode {{ space1999Episode.episode }}. First broadcast {{ space1999Episode.broadcastDate | readableDate }}.
 {{ post.content | striptags(true) }}

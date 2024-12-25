@@ -1,14 +1,22 @@
-import { readFile } from 'node:fs/promises'
-import podcastPlugin from './_11ty/podcast-plugin.js'
+import podcaster from 'eleventy-plugin-podcaster'
+import { IdAttributePlugin } from '@11ty/eleventy'
 import lightningCSS from '@11tyrocks/eleventy-plugin-lightningcss'
 import { eleventyImageTransformPlugin } from '@11ty/eleventy-img'
 import markdownIt from 'markdown-it'
-import markdownItAttrs from 'markdown-it-attrs'
-
-const siteData = JSON.parse(await readFile('./src/_data/site.json'))
 
 export default function (eleventyConfig) {
-  eleventyConfig.addPlugin(podcastPlugin)
+  const markdownLibrary = markdownIt({
+    html: true,
+    typographer: true
+  })
+  eleventyConfig.setLibrary('md', markdownLibrary)
+
+  eleventyConfig.addPlugin(podcaster, {
+    handleDrafts: true,
+    readableDateLocale: 'en-GB'
+  })
+
+  eleventyConfig.addPlugin(IdAttributePlugin)
   eleventyConfig.addPlugin(lightningCSS)
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: ['avif', 'webp', 'jpeg'],
@@ -18,27 +26,6 @@ export default function (eleventyConfig) {
       sizes: '(min-width: 400px) 331px, calc(78.75vw + 32px)'
     }
   })
-
-  let hasLoggedAboutDrafts = false
-  eleventyConfig.addPreprocessor('drafts', 'md', (data, _content) => {
-    if (!hasLoggedAboutDrafts) {
-      if (process.env.BUILD_DRAFTS) {
-        console.log('Including drafts.')
-      } else {
-        console.log('Excluding drafts.')
-      }
-      hasLoggedAboutDrafts = true
-    }
-    if (data.draft && !process.env.BUILD_DRAFTS) {
-      return false
-    }
-  })
-
-  const markdownLibrary = markdownIt({
-    html: true,
-    typographer: true
-  }).use(markdownItAttrs)
-  eleventyConfig.setLibrary('md', markdownLibrary)
 
   eleventyConfig.addCollection('podcast', collectionAPI => {
     const podcasts = collectionAPI.getFilteredByTag('podcast')
@@ -51,12 +38,13 @@ export default function (eleventyConfig) {
     return podcastsWithPosition.concat(podcastsWithoutPosition)
   })
 
-  eleventyConfig.addShortcode('pageTitle', pageTitle => {
-    const siteTitle = siteData.title
-    if (pageTitle && pageTitle.length > 0 && pageTitle !== siteTitle) {
-      return `${pageTitle} &middot; ${siteTitle}`
-    } else {
-      return siteTitle
+  eleventyConfig.addGlobalData('eleventyComputed.pageTitle', () => {
+    return data => {
+      if (data.title && data.title.length > 0 && data.title !== data.site.title) {
+        return `${data.title} &middot; ${data.site.title}`
+      } else {
+        return data.site.title
+      }
     }
   })
 
