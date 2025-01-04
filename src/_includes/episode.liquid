@@ -7,11 +7,7 @@
   {%- endif -%}
 
   <section class="space-1999-information">
-    <is-land on:media="(prefers-reduced-motion: no-preference)">
-      <snow-fall style="--snow-fall-size: 5px">
-      <img src="/img/{{ post.data.imageFile }}" alt="{{ post.data.imageAlt }}">
-      </snow-fall>
-    </is-land>
+    <img src="/img/{{ post.data.imageFile }}" alt="{{ post.data.imageAlt }}">
     <p>
       Season {{ space1999[post.data.episode.episodeNumber].season }},
       Episode {{ space1999[post.data.episode.episodeNumber].episode }}.<br>
