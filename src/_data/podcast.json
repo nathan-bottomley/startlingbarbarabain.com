@@ -16,8 +16,8 @@
   "copyright": "Flight Through Entirety",
   "startingYear": 2023,
   "episodeUrlBase": "https://dts.podtrac.com/redirect.mp3/startlingbarbarabain.fte-cdn.com/",
-  "feedEpisodeContentTemplate": "feed-content.njk",
-  "feedEpisodeDescriptionTemplate": "feed-description.njk",
+  "episodeContentTemplate": "feed-content.njk",
+  "episodeDescriptionTemplate": "feed-description.njk",
   "subscriptions": [
     {
       "name": "Apple Podcasts",
