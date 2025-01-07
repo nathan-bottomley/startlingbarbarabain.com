@@ -13,7 +13,8 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addPlugin(podcaster, {
     handleDrafts: true,
-    readableDateLocale: 'en-GB'
+    readableDateLocale: 'en-GB',
+    calculatePageTitle: true
   })
 
   eleventyConfig.addPlugin(IdAttributePlugin)
@@ -36,16 +37,6 @@ export default function (eleventyConfig) {
       .filter(podcast => !podcast.data.position)
       .sort((a, b) => b.data.firstBroadcast - a.data.firstBroadcast)
     return podcastsWithPosition.concat(podcastsWithoutPosition)
-  })
-
-  eleventyConfig.addGlobalData('eleventyComputed.pageTitle', () => {
-    return data => {
-      if (data.title && data.title.length > 0 && data.title !== data.site.title) {
-        return `${data.title} &middot; ${data.site.title}`
-      } else {
-        return data.site.title
-      }
-    }
   })
 
   eleventyConfig.addPassthroughCopy('src/js')
