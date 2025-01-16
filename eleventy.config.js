@@ -44,6 +44,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/img')
   eleventyConfig.addPassthroughCopy('src/fonts')
   eleventyConfig.addPassthroughCopy({ 'src/_icons': '/' })
+  eleventyConfig.addPassthroughCopy('src/_headers')
 }
 
 export const config = {
