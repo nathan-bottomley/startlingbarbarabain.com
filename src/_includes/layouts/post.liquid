@@ -2,3 +2,23 @@
 layout: layouts/base.liquid
 ---
 {% include 'episode.liquid' %}
+
+{% assign previousPost = collections.podcastEpisode | getPreviousCollectionItem %}
+{% assign nextPost = collections.podcastEpisode | getNextCollectionItem %}
+
+<nav class="post-links navigation-previous-next">
+  {% if previousPost -%}
+    <a href="{{ previousPost.url }}" class="previous">
+      &larr;&nbsp;Episode {{ previousPost.data.episode.episodeNumber }}:
+      {{ previousPost.data.title }}
+    </a>
+  {% else %}
+    <span></span>
+  {%- endif -%}
+  {%- if nextPost -%}
+    <a href="{{ nextPost.url }}" class="next">
+      Episode {{ nextPost.data.episode.episodeNumber }}:
+      {{ nextPost.data.title }}&nbsp;&rarr;
+    </a>
+  {%- endif %}
+</nav>

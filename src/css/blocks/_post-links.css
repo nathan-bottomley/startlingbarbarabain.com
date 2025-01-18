@@ -1,0 +1,15 @@
+.post-links {
+  display: flex;
+  justify-content: space-between;
+  margin-block-start: var(--size-xxxl);
+  gap: var(--size-m);
+
+  a {
+    margin-block-start: 0;
+    text-wrap: balance;
+  }
+
+  .next {
+    text-align: right;
+  }
+}
