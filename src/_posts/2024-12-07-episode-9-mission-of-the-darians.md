@@ -7,4 +7,4 @@ episode:
   episodeNumber: 9
   recordingDate: 2024-12-06
 ---
-This week, we've been invited to a century-long dinner by Joan Collins. The menu, as always: the basic proteins, amino acids, trace elements and enzyme variants of the lower classes.
+This month, we've been invited to a century-long dinner by Joan Collins. The menu, as always: the basic proteins, amino acids, trace elements and enzyme variants of the lower classes.

@@ -15,7 +15,7 @@
     </section>
   </section>
   <p class="podcast-episode-information">
-    {{ post.date | readableDate }} &middot; Episode {{ post.data.episode.episodeNumber }}
+    Episode {{ post.data.episode.episodeNumber }} &middot; {{ post.date | readableDate }}
   </p>
 
   {{ post.content }}
