@@ -1,0 +1,26 @@
+media-controller {
+  inline-size: 100%;
+
+  --media-font-family: "Futura Book", serif;
+  --media-font-weight: 300;
+  --media-primary-color: var(--barbara-brown);
+  --media-control-background: var(--barbara-beige-light);
+  --media-control-hover-background: white;
+  --media-range-track-background: var(--barbara-beige-dark);
+
+  * {
+    margin-block-start: 0;
+  }
+
+  media-control-bar {
+    inline-size: 100%;
+  }
+}
+
+figure[type="audio"]
+{
+  figcaption
+  {
+    margin-block-start: var(--size-s);
+  }
+}

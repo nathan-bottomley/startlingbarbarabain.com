@@ -20,9 +20,19 @@
 
   {{ post.content }}
   <figure type="audio">
-    <audio preload="none" data-preload="none" duration="{{ post.data.episode.duration }}">
-      <source src="{{ post.data.episode.url }}" type="audio/mp3">
-    </audio>
+    <media-controller audio>
+      <audio preload="none" slot="media">
+        <source src="{{ post.data.episode.url }}" type="audio/mp3">
+      </audio>
+      <media-control-bar>
+        <media-play-button></media-play-button>
+        <media-time-display showduration></media-time-display>
+        <media-time-range></media-time-range>
+        <media-mute-button></media-mute-button>
+        <media-volume-range></media-volume-range>
+        <media-playback-rate-button></media-playback-rate-button>
+      </media-control-bar>
+    </media-controller>
     <figcaption>
     <a download href="{{ post.data.episode.url }}">Download</a> &middot;
     <a target="_blank" href="{{ post.data.episode.url }}">Open in new window</a> &middot;
