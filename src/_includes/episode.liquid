@@ -20,7 +20,7 @@
 
   {{ post.content }}
   <figure type="audio">
-    <media-controller audio>
+    <media-controller audio defaultduration="{{ post.data.episode.duration }}">
       <audio preload="none" slot="media">
         <source src="{{ post.data.episode.url }}" type="audio/mp3">
       </audio>
@@ -30,15 +30,14 @@
         <media-time-range></media-time-range>
         <media-mute-button></media-mute-button>
         <media-volume-range></media-volume-range>
-        <media-playback-rate-button></media-playback-rate-button>
+        <media-playback-rate-button rates="0.7 1 1.2 1.5 1.7 2"></media-playback-rate-button>
+        <media-airplay-button></media-airplay-button>
       </media-control-bar>
     </media-controller>
     <figcaption>
-    <a download href="{{ post.data.episode.url }}">Download</a> &middot;
-    <a target="_blank" href="{{ post.data.episode.url }}">Open in new window</a> &middot;
-    Duration: {{ post.data.episode.duration | readableDuration }} &middot;
-    Recorded on {{ post.data.episode.recordingDate | readableDate }}<br>
-    Subscribe:&nbsp;&nbsp;
+    Recorded on {{ post.data.episode.recordingDate | readableDate }} &middot;
+    <a target="_blank" href="{{ post.data.episode.url }}">Open in new window</a><br>
+    Subscribe:
     {% for subscription in podcast.subscriptions %}
       {%- if not forloop.first %} &middot;{% endif -%}&nbsp;<a href="{{ subscription.url }}">{{ subscription.name }}</a>
     {% endfor -%}

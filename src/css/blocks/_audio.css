@@ -1,5 +1,7 @@
 media-controller {
   inline-size: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
 
   --media-font-family: "Futura Book", serif;
   --media-font-weight: 300;
@@ -7,6 +9,7 @@ media-controller {
   --media-control-background: var(--barbara-beige-light);
   --media-control-hover-background: white;
   --media-range-track-background: var(--barbara-beige-dark);
+  --media-preview-time-text-shadow: none;
 
   * {
     margin-block-start: 0;
@@ -14,6 +17,21 @@ media-controller {
 
   media-control-bar {
     inline-size: 100%;
+  }
+
+  media-airplay-button[mediaairplayunavailable] {
+    display: none;
+  }
+
+  media-volume-range[mediavolumeunavailable] {
+    display: none;
+  }
+
+  @media (width < 400px) {
+    --media-control-padding: 0.5rem;
+    media-volume-range {
+      display: none;
+    }
   }
 }
 
