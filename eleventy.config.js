@@ -14,7 +14,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(podcaster, {
     episodeFilenamePattern: /SBB (?<episodeNumber>\d+),\s.*\.mp3/,
     handleDrafts: true,
-    readableDateLocale: 'en-GB',
+    readableDateLocale: 'en-AU',
     calculatePageTitle: true
   })
 
