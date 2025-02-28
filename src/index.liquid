@@ -7,8 +7,6 @@ pagination:
   size: 12
   reverse: true
   alias: posts
-linkInTitle: true
 ---
-{% for post in posts %}
-  {% include 'episode.liquid' %}
-{% endfor %}
+
+{% render 'episode.liquid' for posts as post, linkInTitle: true %}

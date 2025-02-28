@@ -1,10 +1,12 @@
 ---
 layout: layouts/base.liquid
 ---
-{% include 'episode.liquid' %}
 
+{% assign post = collections.podcastEpisode | getCollectionItem %}
 {% assign previousPost = collections.podcastEpisode | getPreviousCollectionItem %}
 {% assign nextPost = collections.podcastEpisode | getNextCollectionItem %}
+
+{% render 'episode.liquid' with post as post %}
 
 <nav class="post-links navigation-previous-next">
   {% if previousPost -%}

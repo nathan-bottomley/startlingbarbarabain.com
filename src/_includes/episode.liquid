@@ -1,4 +1,3 @@
-{% unless post %}{% assign post = collections.podcastEpisode | getCollectionItem %}{% endunless %}
 <article>
   {%- if linkInTitle %}
   <h1><a href="{{ post.url }}">{{ post.data.title }}</a></h1>
@@ -9,9 +8,9 @@
   <section class="space-1999-information">
     <img src="/img/{{ post.data.imageFile }}" alt="{{ post.data.imageAlt }}">
     <p>
-      Season {{ space1999[post.data.episode.episodeNumber].season }},
-      Episode {{ space1999[post.data.episode.episodeNumber].episode }}.<br>
-      First broadcast on {{ space1999[post.data.episode.episodeNumber].broadcastDate | readableDate }}.
+      Season {{ post.data.space1999[post.data.episode.episodeNumber].season }},
+      Episode {{ post.data.space1999[post.data.episode.episodeNumber].episode }}.<br>
+      First broadcast on {{ post.data.space1999[post.data.episode.episodeNumber].broadcastDate | readableDate }}.
     </section>
   </section>
   <p class="podcast-episode-information">
@@ -38,7 +37,7 @@
     Recorded on {{ post.data.episode.recordingDate | readableDate }} &middot;
     <a target="_blank" href="{{ post.data.episode.url }}">Download</a>  ({{ post.data.episode.size | readableSize: 1 }})<br>
     Subscribe:
-    {% for subscription in podcast.subscriptions %}
+    {% for subscription in post.data.podcast.subscriptions %}
       {%- if not forloop.first %} &middot;{% endif -%}&nbsp;<a href="{{ subscription.url }}">{{ subscription.name }}</a>
     {% endfor -%}
   </figure>
