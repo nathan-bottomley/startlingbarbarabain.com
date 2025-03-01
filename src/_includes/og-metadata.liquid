@@ -1,15 +1,12 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="{{ site.title }}">
     <meta property="og:title" content="{{ title | default: site.title }}">
-    {%- if tags and tags contains 'podcastEpisode' %}
-    <meta property="og:description" content="{{ content | strip_html | strip | truncatewords: 30 }}">
-    {%- else %}
-    <meta property="og:description" content="{{ site.description }}">
-    {%- endif -%}
-    {%- if tags and tags contains 'podcastEpisode' %}
+    {%- if post %}
+    <meta property="og:description" content="{{ post.content | strip_html | strip | truncatewords: 30 }}">
     <meta property="og:image" content="{{ site.url }}/img/{{ imageFile }}">
     <meta property="og:image:alt" content="{{ post.data.imageAlt }}">
     {%- else %}
+    <meta property="og:description" content="{{ site.description }}">
     <meta property="og:image" content="{{ site.url }}/img/link-logo.jpg">
-    <meta property="og:image:alt" content="{{ site.linkLogoAltText }}/img/link-logo.jpg">
+    <meta property="og:image:alt" content="{{ site.linkLogoAltText }}">
     {%- endif %}

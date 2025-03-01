@@ -18,7 +18,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="theme-color" content="#cfccc8">
-{% include 'social-media-metadata.liquid' -%}
+    {% assign post = collections.podcastEpisode | getCollectionItem %}
+{% render 'og-metadata.liquid', post: post, site: site, title: title -%}
     <title>{{ pageTitle }}</title>
   </head>
   <body>
