@@ -3,7 +3,7 @@
     <meta property="og:title" content="{{ title | default: site.title }}">
     {%- if post %}
     <meta property="og:description" content="{{ post.content | strip_html | strip | truncatewords: 30 }}">
-    <meta property="og:image" content="{{ site.url }}/img/{{ imageFile }}">
+    <meta property="og:image" content="{{ site.url }}/img/{{ post.data.imageFile }}">
     <meta property="og:image:alt" content="{{ post.data.imageAlt }}">
     {%- else %}
     <meta property="og:description" content="{{ site.description }}">
