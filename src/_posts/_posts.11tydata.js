@@ -2,7 +2,6 @@ import slugify from 'slugify'
 
 export default {
   tags: ['podcastEpisode'],
-  permalink: '/{{ episode.episodeNumber }}/',
   layout: 'layouts/post.liquid',
   eleventyComputed: {
     imageFile (data) {

@@ -15,7 +15,8 @@ export default function (eleventyConfig) {
     episodeFilenamePattern: /SBB (?<episodeNumber>\d+),\s.*\.mp3/,
     handleDrafts: true,
     readableDateLocale: 'en-AU',
-    calculatePageTitle: true
+    calculatePageTitle: true,
+    handleEpisodePermalinks: true
   })
 
   eleventyConfig.addPlugin(IdAttributePlugin)
