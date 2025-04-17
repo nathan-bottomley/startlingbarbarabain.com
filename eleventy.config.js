@@ -1,6 +1,6 @@
 import podcaster from 'eleventy-plugin-podcaster'
 import { IdAttributePlugin } from '@11ty/eleventy'
-import lightningCSS from '@11tyrocks/eleventy-plugin-lightningcss'
+import cssPlugin from './_11ty/css-plugin.js'
 import { eleventyImageTransformPlugin } from '@11ty/eleventy-img'
 import markdownIt from 'markdown-it'
 
@@ -20,7 +20,7 @@ export default function (eleventyConfig) {
   })
 
   eleventyConfig.addPlugin(IdAttributePlugin)
-  eleventyConfig.addPlugin(lightningCSS)
+  eleventyConfig.addPlugin(cssPlugin)
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: ['avif', 'webp', 'jpeg'],
     widths: [331, 662],
