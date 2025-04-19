@@ -2,8 +2,8 @@ import slugify from 'slugify'
 
 export default {
   tags: ['podcast'],
-  permalink: false,
   eleventyComputed: {
+    permalink: false,
     image: data => {
       if (data.image) {
         return data.image

@@ -41,6 +41,10 @@ export default function (eleventyConfig) {
     return podcastsWithPosition.concat(podcastsWithoutPosition)
   })
 
+  eleventyConfig.addCollection('sitemap', collectionAPI => {
+    return collectionAPI.getAll().filter(x => x.data.permalink)
+  })
+
   eleventyConfig.addPassthroughCopy('src/js')
   eleventyConfig.addPassthroughCopy('src/img')
   eleventyConfig.addPassthroughCopy('src/fonts')
