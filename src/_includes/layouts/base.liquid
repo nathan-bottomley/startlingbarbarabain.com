@@ -19,7 +19,7 @@
     <link rel="manifest" href="/site.webmanifest">
     <meta name="theme-color" content="#cfccc8">
     {% assign post = collections.podcastEpisode | getCollectionItem %}
-{% render 'og-metadata.liquid', post: post, site: site, title: title -%}
+{% render 'og-metadata.liquid', post: post, site: site, title: title, pageTitle: pageTitle -%}
     <title>{{ pageTitle }}</title>
   </head>
   <body>
