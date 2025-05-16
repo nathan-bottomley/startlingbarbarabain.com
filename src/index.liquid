@@ -4,9 +4,22 @@ permalink: "/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber | p
 layout: layouts/base
 pagination:
   data: collections.podcastEpisode
-  size: 12
+  size: 10
   reverse: true
   alias: posts
 ---
 
 {% render 'episode.liquid' for posts as post, linkInTitle: true %}
+
+<nav class="pagination navigation-previous-next">
+  {% if pagination.href.next %}
+    <a href="{{ pagination.href.next }}" class="previous">&larr;&nbsp;Older Episodes</a>
+  {% else %}
+  <span></span>
+  {% endif %}
+  {% if pagination.href.previous %}
+    <a href="{{ pagination.href.previous }}" class="next">
+      Newer Episodes&nbsp;&rarr;
+    </a>
+  {% endif %}
+</nav>
