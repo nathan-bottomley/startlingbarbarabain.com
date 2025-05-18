@@ -34,7 +34,7 @@
       </media-control-bar>
     </media-controller>
     <figcaption>
-    Recorded on {{ post.data.episode.recordingDate | readableDate }} &middot;
+    Recorded on {{ post.data.recordingDate | readableDate }} &middot;
     <a target="_blank" href="{{ post.data.episode.url }}">Download</a>  ({{ post.data.episode.size | readableSize: 1 }})<br>
     Subscribe:
     {% for subscription in post.data.podcast.subscriptions %}
