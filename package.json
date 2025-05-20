@@ -14,7 +14,7 @@
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.0",
-    "@11ty/eleventy-img": "^5.0.0",
+    "@11ty/eleventy-img": "^6.0.0",
     "@tsmx/human-readable": "^2.0.2",
     "browserslist": "^4.22.1",
     "eleventy-plugin-podcaster": "^1.4.1",
