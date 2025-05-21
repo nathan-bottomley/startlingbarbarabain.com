@@ -9,7 +9,7 @@ eleventyImport:
 {%- for podcast in collections.podcast -%}
 <h2>{{ podcast.data.title }}</h2>
 <section class="podcast-profile">
-  <a class="logo" href="{{ podcast.data.url }}"><img src="{{ podcast.data.image }}" alt="{{ podcast.data.title }} logo" sizes="(min-width: 800px) 150px, calc(18.75vw + 4px)"></a>
+  <a class="logo" href="{{ podcast.data.url }}"><img src="{{ podcast.data.image }}" alt="{{ podcast.data.title }} logo" sizes="(min-width: 800px) 150px, calc(18.75vw + 4px)" eleventy:widths="150,300"></a>
   <div>{{ podcast.content }}</div>
 </section>
 {%- endfor -%}

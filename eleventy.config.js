@@ -22,12 +22,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(IdAttributePlugin)
   eleventyConfig.addPlugin(cssPlugin)
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-    formats: ['avif', 'webp', 'jpeg'],
-    widths: [331, 662],
-    defaultAttributes: {
-      decoding: 'async',
-      sizes: '(min-width: 400px) 331px, calc(78.75vw + 32px)'
-    }
+    formats: ['webp', 'jpeg']
   })
 
   eleventyConfig.addCollection('podcast', collectionAPI => {
