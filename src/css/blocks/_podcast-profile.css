@@ -22,14 +22,13 @@ h2 + .podcast-profile
 
   a.logo
   {
-    inline-size: min(20vw, 150px);
-    block-size: min(20vw, 150px);
     flex-shrink: 0;
   }
 
   img
   {
-    object-fit: fill;
+    inline-size: min(20vw, 150px);
+    block-size: min(20vw, 150px);
     border-radius: var(--size-xxs);
   }
 
