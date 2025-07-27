@@ -4,5 +4,5 @@ node_modules
 .DS_Store
 _episodes
 .nova
-episodes
+src/episodeFiles
 .cache
