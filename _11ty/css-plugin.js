@@ -7,10 +7,21 @@ export default function (eleventyConfig) {
   eleventyConfig.addExtension('css', {
     outputFileExtension: 'css',
     useLayouts: false,
-    read: false,
-    compile: async function (_inputContent, inputPath) {
+    compile: async function (inputContent, inputPath) {
       const parsedInputPath = path.parse(inputPath)
       if (parsedInputPath.name.startsWith('_')) return
+
+      if (inputContent.includes('@import')) {
+        const fileList = []
+        const importRuleRegex =
+          /@import\s+(?:url\()?['"]?([^'");]+)['"]?\)?.*;/g
+
+        let match
+        while ((match = importRuleRegex.exec(inputContent))) {
+          fileList.push(parsedInputPath.dir + '/' + match[1])
+        }
+        this.addDependencies(inputPath, fileList)
+      }
 
       const targets = browserslistToTargets(browserslist())
 
