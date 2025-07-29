@@ -3,7 +3,7 @@ html
   -webkit-text-size-adjust: 100%;
 }
 
-@view-transitions
+@view-transition
 {
   navigation: auto;
 }
