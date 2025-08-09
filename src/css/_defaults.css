@@ -67,8 +67,8 @@ header, footer
 *
 {
   text-decoration-color: var(--barbara-brown);
-  text-decoration-thickness: 0.25ex;
-  text-underline-offset: 0.25ex;
+  text-decoration-thickness: 0.125ex;
+  text-underline-offset: 0.375ex;
 }
 
 *:link, *:visited
