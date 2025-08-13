@@ -12,11 +12,8 @@ export default function (eleventyConfig) {
   eleventyConfig.setLibrary('md', markdownLibrary)
 
   eleventyConfig.addPlugin(podcaster, {
-    episodeFilenamePattern: /SBB (?<episodeNumber>\d+),\s.*\.mp3/,
     handleDrafts: true,
-    readableDateLocale: 'en-AU',
-    calculatePageTitle: true,
-    handleEpisodePermalinks: true
+    handlePageTitle: true
   })
 
   eleventyConfig.addPlugin(IdAttributePlugin)
