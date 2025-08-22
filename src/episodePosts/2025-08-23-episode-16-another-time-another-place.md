@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Another Time, Another Place
 imageAlt: >-
   Barbara stands in a blank void, her face blurring and overlapping eerily.
