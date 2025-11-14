@@ -7,7 +7,7 @@
   "scripts": {
     "build": "npx @11ty/eleventy",
     "start": "BUILD_DRAFTS=true npx @11ty/eleventy --serve",
-    "episodes": "rclone sync src/episodeFiles digitalocean:startlingbarbarabain -P --exclude .DS_Store",
+    "episodes": "rclone sync src/episode-files digitalocean:startlingbarbarabain -P --exclude .DS_Store",
     "clean": "rm -rf _site"
   },
   "author": "Nathan Bottomley",
