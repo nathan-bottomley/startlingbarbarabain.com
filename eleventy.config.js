@@ -1,8 +1,9 @@
-import podcaster from 'eleventy-plugin-podcaster'
+import Podcaster from 'eleventy-plugin-podcaster'
 import { IdAttributePlugin } from '@11ty/eleventy'
 import cssPlugin from './_11ty/css-plugin.js'
 import { eleventyImageTransformPlugin } from '@11ty/eleventy-img'
 import markdownIt from 'markdown-it'
+import 'dotenv/config'
 
 export default function (eleventyConfig) {
   const markdownLibrary = markdownIt({
@@ -11,9 +12,16 @@ export default function (eleventyConfig) {
   })
   eleventyConfig.setLibrary('md', markdownLibrary)
 
-  eleventyConfig.addPlugin(podcaster, {
+  eleventyConfig.addPlugin(Podcaster, {
     handleDrafts: true,
-    handlePageTitle: true
+    handlePageTitle: true,
+    s3Storage: {
+      accessKey: process.env.S3_ACCESS_KEY,
+      secretKey: process.env.S3_SECRET_KEY,
+      region: process.env.S3_REGION,
+      endpoint: process.env.S3_ENDPOINT,
+      bucket: process.env.S3_BUCKET
+    }
   })
 
   eleventyConfig.addPlugin(IdAttributePlugin)

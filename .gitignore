@@ -7,3 +7,4 @@ _episodes
 src/episodeFiles
 src/episode-files
 .cache
+.env
