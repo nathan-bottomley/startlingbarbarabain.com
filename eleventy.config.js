@@ -14,7 +14,7 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addPlugin(Podcaster, {
     handleDrafts: true,
-    handlePageTitle: true,
+    handlePageTitles: true,
     s3Storage: {
       accessKey: process.env.S3_ACCESS_KEY,
       secretKey: process.env.S3_SECRET_KEY,
