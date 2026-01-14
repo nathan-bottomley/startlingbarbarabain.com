@@ -3,10 +3,11 @@ title: Startling Barbara Bain
 permalink: "/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber | plus: 1 }}/{% endif %}"
 layout: layouts/base
 pagination:
-  data: collections.podcastEpisode
+  data: collections.episodePost
   size: 10
   reverse: true
   alias: posts
+  addAllPagesToCollections: true
 ---
 
 {% render 'episode.liquid' for posts as post, linkInTitle: true %}
