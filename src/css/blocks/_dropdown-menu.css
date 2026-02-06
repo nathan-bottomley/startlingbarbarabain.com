@@ -1,5 +1,15 @@
 dropdown-menu
 {
+  button {
+    background: none;
+    border: none;
+    text-decoration: underline;
+    text-decoration-color: var(--barbara-brown);
+    text-decoration-thickness: 0.125ex;
+    text-underline-offset: 0.375ex;
+    padding: 0;
+  }
+
   ul
   {
     list-style: none;
