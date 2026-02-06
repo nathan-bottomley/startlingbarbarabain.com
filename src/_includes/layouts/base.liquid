@@ -36,10 +36,10 @@
       <ul>
         <li>
           <dropdown-menu>
-            <button class="dropdown-menu-toggle-button">Subscribe</button>
-            <ul class="dropdown-menu">
+            <button class="dropdown-menu-toggle-button" aria-haspopup="true">Subscribe</button>
+            <ul class="dropdown-menu" role="menu">
               {% for subscription in podcast.subscriptions %}
-              <li><a href="{{ subscription.url }}">{{ subscription.name }}</a></li>
+              <li role="none"><a role="menuitem" href="{{ subscription.url }}">{{ subscription.name }}</a></li>
               {% endfor %}
             </ul>
           </dropdown-menu>

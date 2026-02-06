@@ -1,6 +1,8 @@
 /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,24,1.25,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 
 :root {
+  --size-4xs: clamp(0.4521rem, 0.4384rem + 0.0685vw, 0.4915rem);
+  --size-3xs: clamp(0.5425rem, 0.5175rem + 0.125vw, 0.6144rem);
   --size-xxs: clamp(0.6513rem, 0.6106rem + 0.2033vw, 0.7681rem);
   --size-xs: clamp(0.7813rem, 0.7191rem + 0.3109vw, 0.96rem);
   --size-s: clamp(0.9375rem, 0.8462rem + 0.4565vw, 1.2rem);
@@ -8,7 +10,7 @@
   --size-l: clamp(1.35rem, 1.1674rem + 0.913vw, 1.875rem);
   --size-xl: clamp(1.62rem, 1.3683rem + 1.2587vw, 2.3438rem);
   --size-xxl: clamp(1.9438rem, 1.6007rem + 1.7152vw, 2.93rem);
-  --size-xxxl: clamp(2.3325rem, 1.8701rem + 2.312vw, 3.6619rem);
+  --size-3xl: clamp(2.3325rem, 1.8701rem + 2.312vw, 3.6619rem);
   --size-4xl: clamp(2.7994rem, 2.1809rem + 3.0924vw, 4.5775rem);
   --size-5xl: clamp(3.3594rem, 2.5376rem + 4.1087vw, 5.7219rem);
   --size-6xl: clamp(4.0313rem, 2.9456rem + 5.4283vw, 7.1525rem);

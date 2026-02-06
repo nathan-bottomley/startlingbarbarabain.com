@@ -1,7 +1,7 @@
 
 h1 + h2
 {
-  margin-block-start: var(--size-xxxl);
+  margin-block-start: var(--size-3xl);
 }
 
 h2 + .podcast-profile
@@ -11,7 +11,7 @@ h2 + .podcast-profile
 
 .podcast-profile + h2
 {
-  margin-block-start: var(--size-xxxl);
+  margin-block-start: var(--size-3xl);
 }
 
 .podcast-profile

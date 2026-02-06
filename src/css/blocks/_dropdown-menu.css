@@ -19,10 +19,17 @@ dropdown-menu
     background-color: var(--barbara-beige);
     box-shadow: 0 0 var(--size-xxs) var(--barbara-brown);
     border-radius: var(--size-xxs);
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-4xs);
 
-    li + li
-    {
-      padding-block-start: var(--size-xxs);
+    li {
+      padding: var(--size-4xs);
+    }
+
+    a {
+      display: inline-block;
+      inline-size: 100%;
     }
   }
 
@@ -38,5 +45,12 @@ dropdown-menu
     visibility: visible;
     opacity: 1;
     block-size: auto;
+  }
+
+  li:has([role="menuitem"]:focus)
+  {
+    background-color: var(--barbara-beige-light);
+    outline: none;
+    border-radius: var(--size-4xs);
   }
 }
