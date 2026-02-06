@@ -4,9 +4,9 @@ dropdown-menu
     background: none;
     border: none;
     text-decoration: underline;
-    text-decoration-color: var(--barbara-brown);
-    text-decoration-thickness: 0.125ex;
-    text-underline-offset: 0.375ex;
+    text-decoration-color: inherit;
+    text-decoration-thickness: inherit;
+    text-underline-offset: inherit;
     padding: 0;
   }
 
