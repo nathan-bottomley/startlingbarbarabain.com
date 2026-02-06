@@ -11,7 +11,7 @@
       Season {{ post.data.space1999[post.data.episode.episodeNumber].season }},
       Episode {{ post.data.space1999[post.data.episode.episodeNumber].episode }}.<br>
       First broadcast on {{ post.data.space1999[post.data.episode.episodeNumber].broadcastDate | readableDate }}.
-    </section>
+    </p>
   </section>
   <p class="podcast-episode-information">
     Episode {{ post.data.episode.episodeNumber }} &middot; {{ post.date | readableDate }}
@@ -40,5 +40,6 @@
     {% for subscription in post.data.podcast.subscriptions %}
       {%- if not forloop.first %} &middot;{% endif -%}&nbsp;<a href="{{ subscription.url }}">{{ subscription.name }}</a>
     {% endfor -%}
+    </figcaption>
   </figure>
 </article>
