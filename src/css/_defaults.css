@@ -71,13 +71,13 @@ header, footer
   text-underline-offset: 0.375ex;
 }
 
-*:link, *:visited
+a:link, a:visited
 {
-  color: var(--main-text-color);
+  color: inherit;
 }
 
-*:hover, *:active
+a:hover, a:active
 {
-  color: var(--main-text-color);
+  color: inherit;
   text-decoration-color: white;
 }
