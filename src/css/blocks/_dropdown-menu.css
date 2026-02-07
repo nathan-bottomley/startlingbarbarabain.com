@@ -11,6 +11,10 @@ dropdown-menu
     padding: 0;
   }
 
+  &:hover, &:active {
+    text-decoration-color: white;
+  }
+
   ul
   {
     list-style: none;
