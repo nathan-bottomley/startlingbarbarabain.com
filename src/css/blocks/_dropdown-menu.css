@@ -3,6 +3,7 @@ dropdown-menu
   button {
     background: none;
     border: none;
+    color: inherit;
     text-decoration: underline;
     text-decoration-color: inherit;
     text-decoration-thickness: inherit;
