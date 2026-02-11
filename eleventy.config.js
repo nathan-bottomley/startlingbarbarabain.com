@@ -51,6 +51,8 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ 'src/icons': '/' })
   eleventyConfig.addPassthroughCopy('src/_headers')
   eleventyConfig.addPassthroughCopy('src/_redirects')
+
+  eleventyConfig.addFilter('noWrap', str => str.replace(/\s+/g, '&nbsp;'))
 }
 
 export const config = {

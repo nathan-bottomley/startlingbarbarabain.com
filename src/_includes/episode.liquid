@@ -1,3 +1,4 @@
+{%- assign thisEpisode = post.data.space1999[post.data.episode.episodeNumber] -%}
 <article>
   {%- if linkInTitle %}
   <h1><a href="{{ post.url }}">{{ post.data.title }}</a></h1>
@@ -8,9 +9,9 @@
   <section class="space-1999-information">
     <img src="/img/{{ post.data.imageFile }}" alt="{{ post.data.imageAlt }}" sizes="(min-width: 400px) 332px, calc(80vw + 28px)" eleventy:widths="332,664,996">
     <p>
-      Season {{ post.data.space1999[post.data.episode.episodeNumber].season }},
-      Episode {{ post.data.space1999[post.data.episode.episodeNumber].episode }}.<br>
-      First broadcast on {{ post.data.space1999[post.data.episode.episodeNumber].broadcastDate | readableDate }}.
+      Season {{ thisEpisode.season }},
+      Episode {{ thisEpisode.episode }}.<br>
+      First broadcast on {{ thisEpisode.broadcastDate | readableDate | noWrap }}.
     </p>
   </section>
   <p class="podcast-episode-information">
