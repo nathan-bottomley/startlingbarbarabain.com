@@ -1,6 +1,5 @@
-footer
-{
-  margin-block-start: var(--size-xl);
+footer {
   padding-block: var(--size-m);
+  margin-block-start: var(--size-xl);
   font-size: var(--size-xs);
 }

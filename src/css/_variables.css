@@ -1,6 +1,7 @@
 /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,24,1.25,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 
 :root {
+  /* sizes */
   --size-4xs: clamp(0.4521rem, 0.4384rem + 0.0685vw, 0.4915rem);
   --size-3xs: clamp(0.5425rem, 0.5175rem + 0.125vw, 0.6144rem);
   --size-xxs: clamp(0.6513rem, 0.6106rem + 0.2033vw, 0.7681rem);
@@ -15,13 +16,15 @@
   --size-5xl: clamp(3.3594rem, 2.5376rem + 4.1087vw, 5.7219rem);
   --size-6xl: clamp(4.0313rem, 2.9456rem + 5.4283vw, 7.1525rem);
 
-  --barbara-beige: hsl(30, 7%, 80%);  /* #CFCCC8 */
-  --barbara-beige-light: hsl(30, 7%, 95%);
-  --barbara-beige-dark: hsl(30, 7%, 75%);
-  --barbara-brown: hsl(30, 7%, 50%);
+  /* colors */
+  --barbara-beige: hsl(30deg 7% 80%); /* #CFCCC8 */
+  --barbara-beige-light: hsl(30deg 7% 95%);
+  --barbara-beige-dark: hsl(30deg 7% 75%);
+  --barbara-brown: hsl(30deg 7% 50%);
   --secondary-background-color: black;
   --main-text-color: black;
   --secondary-text-color: white;
 
+  /* dimensions */
   --content-inline-size: min(60rem, 100vw - 2rem);
 }

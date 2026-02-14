@@ -1,39 +1,31 @@
-
-h1 + h2
-{
+h1 + h2 {
   margin-block-start: var(--size-3xl);
 }
 
-h2 + .podcast-profile
-{
+h2 + .podcast-profile {
   margin-block-start: var(--size-m);
 }
 
-.podcast-profile + h2
-{
+.podcast-profile + h2 {
   margin-block-start: var(--size-3xl);
 }
 
-.podcast-profile
-{
+.podcast-profile {
   display: flex;
   flex-direction: row;
   gap: var(--size-m);
 
-  a.logo
-  {
+  a.logo {
     flex-shrink: 0;
   }
 
-  img
-  {
+  img {
     inline-size: min(20vw, 150px);
     block-size: min(20vw, 150px);
     border-radius: var(--size-xxs);
   }
 
-  p
-  {
+  p {
     margin-block-start: 0;
   }
 }

@@ -1,8 +1,9 @@
-.post-links, .pagination {
+.post-links,
+.pagination {
   display: flex;
+  gap: var(--size-m);
   justify-content: space-between;
   margin-block-start: var(--size-3xl);
-  gap: var(--size-m);
 
   a {
     margin-block-start: 0;

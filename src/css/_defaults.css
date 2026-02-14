@@ -1,83 +1,75 @@
-html
-{
-  -webkit-text-size-adjust: 100%;
+html {
+  text-size-adjust: 100%;
 }
 
-@view-transition
-{
+@view-transition {
   navigation: auto;
 }
 
-body
-{
-  min-block-size: 100dvh;
-  min-block-size: 100vh;
+body {
   display: flex;
   flex-direction: column;
+  min-block-size: 100dvh;
+  min-block-size: 100vh;
   letter-spacing: -0.01em;
 }
 
-body > main
-{
+body > main {
   flex-grow: 1;
 }
 
-body > *:not(header, footer), header > *, footer > *
-{
+body > *:not(header, footer),
+header > *,
+footer > * {
   inline-size: var(--content-inline-size);
   margin-inline: auto;
 }
 
-body > * + *
-{
+body > * + * {
   margin-block-start: var(--size-xl);
 }
 
-main > article + article
-{
+main > article + article {
   margin-block-start: var(--size-5xl);
 }
 
-p
-{
+p {
   text-wrap: pretty;
 }
 
 /* main colors */
 
-body
-{
+body {
   color: var(--main-text-color);
   background-color: var(--barbara-beige);
-  background-image: url('../img/moonbase-alpha.svg');
-  background-size: 120vw;
+  background-image: url("../img/moonbase-alpha.svg");
   background-repeat: no-repeat;
   background-position-x: -40vw;
   background-position-y: 30vh;
+  background-size: 120vw;
 }
 
-header, footer
-{
+header,
+footer {
   color: var(--secondary-text-color);
   background-color: var(--secondary-background-color);
 }
 
 /* links */
 
-*
-{
-  text-decoration-color: var(--barbara-brown);
+* {
   text-decoration-thickness: 0.125ex;
+  text-decoration-color: var(--barbara-brown);
   text-underline-offset: 0.375ex;
 }
 
-a:link, a:visited
-{
+a:link,
+a:visited {
   color: inherit;
 }
 
-a:hover, a:active
-{
+a:hover,
+a:active {
   color: inherit;
   text-decoration-color: white;
 }
