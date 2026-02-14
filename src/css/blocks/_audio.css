@@ -1,7 +1,7 @@
 media-controller {
   inline-size: 100%;
-  border-radius: 0.5rem;
   overflow: hidden;
+  border-radius: 0.5rem;
 
   --media-font-family: "Futura Book", serif;
   --media-font-weight: 300;
@@ -29,16 +29,15 @@ media-controller {
 
   @media (width < 400px) {
     --media-control-padding: 0.5rem;
+
     media-volume-range {
       display: none;
     }
   }
 }
 
-figure[type="audio"]
-{
-  figcaption
-  {
+figure[type="audio"] {
+  figcaption {
     margin-block-start: var(--size-s);
   }
 }

@@ -1,44 +1,38 @@
-article
-{
+article {
   display: flex;
   flex-direction: column;
   gap: var(--size-s);
 
-  h1 
-  {
+  h1 {
     font-family: "Futura Black", sans-serif;
     font-size: var(--size-xxl);
-    a
-    {
+
+    a {
       text-decoration: none;
     }
   }
 
-  .space-1999-information
-  {
+  .space-1999-information {
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--size-s);
+    align-items: flex-end;
     font-family: "Futura Book", sans-serif;
     font-size: var(--size-s);
     text-transform: uppercase;
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: var(--size-s);
-    align-items: flex-end;
-
-    img 
-    {
-      max-block-size: 250px;
-      block-size: auto;
-      inline-size: auto; 
-      object-fit: cover;
+    img {
       flex-shrink: 0;
+      inline-size: auto;
+      block-size: auto;
+      max-block-size: 250px;
+      object-fit: cover;
       border-radius: var(--size-xs);
     }
   }
 
-  .podcast-episode-information, figcaption
-  {
+  .podcast-episode-information,
+  figcaption {
     font-size: var(--size-s);
   }
 }
