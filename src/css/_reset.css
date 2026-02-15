@@ -5,11 +5,6 @@
   box-sizing: border-box;
 }
 
-/* Prevent font size inflation */
-html {
-  text-size-adjust: none;
-}
-
 /* Remove default margin in favour of better control in authored CSS */
 body,
 h1,
@@ -32,7 +27,6 @@ ol[role="list"] {
 
 /* Set core body defaults */
 body {
-  min-height: 100vh;
   line-height: 1.5;
 }
 
