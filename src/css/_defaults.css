@@ -41,6 +41,9 @@ p {
 
 body {
   color: var(--main-text-color);
+  text-decoration-thickness: 0.125ex;
+  text-decoration-color: var(--barbara-brown);
+  text-underline-offset: 0.375ex;
   background-color: var(--barbara-beige);
   background-image: url("../img/moonbase-alpha.svg");
   background-repeat: no-repeat;
@@ -56,12 +59,6 @@ footer {
 }
 
 /* links */
-
-* {
-  text-decoration-thickness: 0.125ex;
-  text-decoration-color: var(--barbara-brown);
-  text-underline-offset: 0.375ex;
-}
 
 a:link,
 a:visited {
