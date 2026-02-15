@@ -36,7 +36,7 @@
     </media-controller>
     <figcaption>
     Recorded on {{ post.data.recordingDate | readableDate }} &middot;
-    <a target="_blank" href="{{ post.data.episode.url }}">Download</a>  ({{ post.data.episode.size | readableSize: 1 }})<br>
+    <a target="_blank" rel="noopener" href="{{ post.data.episode.url }}">Download</a>  ({{ post.data.episode.size | readableSize: 1 }})<br>
     Subscribe:
     {% for subscription in post.data.podcast.subscriptions %}
       {%- if not forloop.first %} &middot;{% endif -%}&nbsp;<a href="{{ subscription.url }}">{{ subscription.name }}</a>
