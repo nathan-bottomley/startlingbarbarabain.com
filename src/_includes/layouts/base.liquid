@@ -3,7 +3,15 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="{{ site.description }}">
+    {% assign post = collections.podcastEpisode | getCollectionItem -%}
+    {%- if pageDescription -%}
+      {% assign metaDescription = pageDescription %}
+    {%- elsif post -%}
+      {% assign metaDescription = post.content | strip_html | strip | truncatewords: 30 %}
+    {%- else -%}
+      {% assign metaDescription = site.pageDescription %}
+    {%- endif %}
+    <meta name="description" content="{{ metaDescription }}">
     <script src="/js/dropdown-menu.js" type="module"></script>
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}/feed/podcast" />
     <link rel="preload" href="/fonts/FuturaBlack.woff2" as="font" type="font/woff2" crossorigin>
@@ -19,8 +27,17 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="theme-color" content="#cfccc8">
-    {% assign post = collections.podcastEpisode | getCollectionItem %}
-{% render 'og-metadata.liquid', post: post, site: site, title: title, pageTitle: pageTitle -%}
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:title" content="{{ pageTitle | default: site.title }}">
+    <meta property="og:description" content="{{ metaDescription }}">
+    {%- if post %}
+    <meta property="og:image" content="{{ site.url }}/img/{{ post.data.imageFile }}">
+    <meta property="og:image:alt" content="{{ post.data.imageAlt }}">
+    {%- else %}
+    <meta property="og:image" content="{{ site.url }}/img/link-logo.jpg">
+    <meta property="og:image:alt" content="{{ site.linkLogoAltText }}">
+    {%- endif %}
     <title>{{ pageTitle }}</title>
   </head>
   <body>
