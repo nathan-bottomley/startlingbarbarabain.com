@@ -18,7 +18,7 @@
 }
 
 body {
-  font-family: "Futura Book", serif;
+  font-family: "Futura Book", sans-serif;
   font-size: var(--size-m);
   font-weight: 400;
 }
