@@ -15,7 +15,7 @@
   "language": "en",
   "copyright": "Flight Through Entirety",
   "startingYear": 2023,
-  "episodeUrlBase": "https://op3.dev/e,pg=70e25171-ec32-5c89-89ad-c412eedb13ea/dts.podtrac.com/redirect.mp3/startlingbarbarabain.fte-cdn.com/",
+  "episodeUrlBase": "https://op3.dev/e,pg=70e25171-ec32-5c89-89ad-c412eedb13ea/startlingbarbarabain.fte-cdn.com/",
   "episodeContentTemplate": "feed-content.njk",
   "episodeDescriptionTemplate": "feed-description.njk",
   "subscriptions": [
