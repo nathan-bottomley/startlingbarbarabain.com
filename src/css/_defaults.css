@@ -63,6 +63,7 @@ footer {
 a:link,
 a:visited {
   color: inherit;
+  text-decoration-color: color-mix(in srgb, currentcolor, transparent 60%);
 }
 
 a:hover,

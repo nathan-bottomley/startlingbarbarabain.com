@@ -4,7 +4,7 @@ dropdown-menu {
     color: inherit;
     text-decoration: underline;
     text-decoration-thickness: inherit;
-    text-decoration-color: inherit;
+    text-decoration-color: color-mix(in srgb, currentcolor, transparent 60%);
     text-underline-offset: inherit;
     background: none;
     border: none;
