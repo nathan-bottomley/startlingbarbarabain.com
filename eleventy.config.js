@@ -27,7 +27,8 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(IdAttributePlugin)
   eleventyConfig.addPlugin(cssPlugin)
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-    formats: ['webp', 'jpeg']
+    formats: ['webp', 'jpeg'],
+    failOnError: process.env.ELEVENTY_RUN_MODE === 'build'
   })
 
   eleventyConfig.addCollection('podcast', collectionAPI => {
