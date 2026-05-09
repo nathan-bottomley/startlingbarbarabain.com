@@ -46,7 +46,6 @@ export default function (eleventyConfig) {
     return collectionAPI.getAll().filter(x => x.data.permalink)
   })
 
-  eleventyConfig.addPassthroughCopy('src/js')
   eleventyConfig.addPassthroughCopy('src/img')
   eleventyConfig.addPassthroughCopy('src/fonts')
   eleventyConfig.addPassthroughCopy({ 'src/icons': '/' })

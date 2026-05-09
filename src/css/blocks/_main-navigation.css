@@ -1,0 +1,57 @@
+.main-navigation {
+  .popover-button {
+    padding: 0;
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: inherit;
+    text-decoration-color: color-mix(in srgb, currentcolor, transparent 60%);
+    text-underline-offset: inherit;
+    background: none;
+    border: none;
+
+    &:hover {
+      text-decoration-color: white;
+    }
+  }
+
+  [popover] {
+    inset: unset;
+    top: anchor(bottom);
+    margin: 0;
+
+    &:popover-open {
+      display: flex;
+      flex-direction: column;
+      gap: var(--size-4xs);
+      padding: var(--size-xxs);
+      list-style: none;
+      background-color: color-mix(
+        in srgb,
+        var(--barbara-beige),
+        transparent 2.5%
+      );
+      border: none;
+      border-radius: var(--size-xxs);
+      box-shadow: 0 0 var(--size-xxs) var(--barbara-brown);
+      transform: translateX(calc(-1 * var(--size-xxs) - var(--size-4xs)));
+
+      li {
+        padding: var(--size-4xs);
+      }
+
+      a {
+        display: inline-block;
+        inline-size: 100%;
+      }
+    }
+  }
+
+  #subscribe-menu-button {
+    anchor-name: --subscribe-menu-button;
+  }
+
+  #subscribe-menu-popover {
+    left: anchor(left);
+    position-anchor: --subscribe-menu-button;
+  }
+}
