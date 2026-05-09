@@ -19,6 +19,12 @@
     {% if includeAudioPlayer -%}
     <script type="module" src="https://cdn.jsdelivr.net/npm/media-chrome@4/+esm"></script>
     {%- endif %}
+    <!-- remove this script when anchor positioning is baseline widely available in July 2028 -->
+    <script type="module">
+      if (!('anchorName' in document.documentElement.style)) {
+        import("https://unpkg.com/@oddbird/css-anchor-positioning")
+      }
+    </script>
     <meta name="generator" content="{{ eleventy.generator }}">
     <meta name="apple-itunes-app" content="app-id=1714034909">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
