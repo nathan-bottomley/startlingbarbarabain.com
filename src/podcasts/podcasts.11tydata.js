@@ -1,4 +1,4 @@
-import slugify from 'slugify'
+import slugify from '@sindresorhus/slugify'
 
 export default {
   tags: ['podcast'],
@@ -8,7 +8,7 @@ export default {
       if (data.image) {
         return data.image
       }
-      return `/img/podcasts/${slugify(data.title, { lower: true })}.jpg`
+      return `/img/podcasts/${slugify(data.title)}.jpg`
     }
   }
 }
