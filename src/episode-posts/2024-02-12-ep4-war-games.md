@@ -1,8 +1,8 @@
 ---
 title: War Games
 imageAlt: >-
-  Barbara is a a glass tank in a brightly and colourfully lit room.
-  She is wearing elaborate pink satin sci-fi robes and looking off into the\
+  Barbara is a glass tank in a brightly and colourfully lit room.
+  She is wearing elaborate pink satin sci-fi robes and looking off into the
   distance. In the background is an alien man with a massive domed head.
 recordingDate: 2024-02-11
 ---
