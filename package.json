@@ -4,16 +4,16 @@
   "description": "The website for the podcast Startling Barbara Bain",
   "type": "module",
   "scripts": {
-    "build": "npx @11ty/eleventy",
-    "start": "BUILD_DRAFTS=true npx @11ty/eleventy --serve",
+    "build": "npx @awesome.me/buildawesome",
+    "start": "BUILD_DRAFTS=true npx @awesome.me/buildawesome --serve",
     "episodes": "rclone sync episodes digitalocean:startlingbarbarabain -P --exclude .DS_Store",
     "clean": "rm -rf _site"
   },
   "author": "Nathan Bottomley",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.0",
     "@11ty/eleventy-img": "^6.0.0",
+    "@awesome.me/buildawesome": "^4.0.0-alpha.8",
     "@sindresorhus/slugify": "^3.0.0",
     "browserslist": "^4.22.1",
     "dotenv": "^17.2.3",
