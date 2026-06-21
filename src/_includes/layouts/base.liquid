@@ -12,6 +12,7 @@
       {% assign metaDescription = site.pageDescription %}
     {%- endif %}
     <meta name="description" content="{{ metaDescription }}">
+    <script src="/js/popover-menu.js" type="module"></script>
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}/feed/podcast" />
     <link rel="preload" href="/fonts/FuturaBlack.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/FuturaBook.woff2" as="font" type="font/woff2" crossorigin>
@@ -60,12 +61,14 @@
     <nav class="main-navigation">
       <ul>
         <li>
-          <button id="subscribe-menu-button" class="popover-button" popovertarget="subscribe-menu-popover">Subscribe</button>
-          <ul id="subscribe-menu-popover" popover>
-            {% for subscription in podcast.subscriptions %}
-            <li role="none"><a role="menuitem" href="{{ subscription.url }}">{{ subscription.name }}</a></li>
-            {% endfor %}
-          </ul>
+          <popover-menu>
+            <button popovertarget="subscribe-menu-popover">Subscribe</button>
+            <ul id="subscribe-menu-popover" popover>
+              {% for subscription in podcast.subscriptions %}
+              <li><a href="{{ subscription.url }}">{{ subscription.name }}</a></li>
+              {% endfor %}
+            </ul>
+          </popover-menu>
         </li>
         <li><a href="/podcasts">Our podcasts</a></li>
       </ul>

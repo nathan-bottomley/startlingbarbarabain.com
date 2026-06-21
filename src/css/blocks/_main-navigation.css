@@ -1,5 +1,5 @@
 .main-navigation {
-  .popover-button {
+  popover-menu button {
     padding: 0;
     color: inherit;
     text-decoration: underline;
@@ -44,14 +44,5 @@
         inline-size: 100%;
       }
     }
-  }
-
-  #subscribe-menu-button {
-    anchor-name: --subscribe-menu-button;
-  }
-
-  #subscribe-menu-popover {
-    left: anchor(left);
-    position-anchor: --subscribe-menu-button;
   }
 }
