@@ -17,6 +17,7 @@
   [popover] {
     inset: unset;
     top: anchor(bottom);
+    left: anchor(left);
     margin: 0;
 
     &:popover-open {
