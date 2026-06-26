@@ -8,7 +8,7 @@ layout: layouts/base.liquid
 
 {% render 'episode.liquid' with post as post %}
 
-<nav class="post-links navigation-previous-next">
+<nav class="post-links navigation-previous-next" aria-label="Episode navigation">
   {% if previousPost -%}
     <a href="{{ previousPost.url }}" class="previous">
       &larr;&nbsp;Episode {{ previousPost.data.episode.episodeNumber }}:

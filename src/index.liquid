@@ -13,7 +13,7 @@ pagination:
 
 {% render 'episode.liquid' for posts as post, linkInTitle: true %}
 
-<nav class="pagination navigation-previous-next">
+<nav class="pagination navigation-previous-next" aria-label="Pagination navigation">
   {% if pagination.href.next %}
     <a href="{{ pagination.href.next }}" class="previous">&larr;&nbsp;Older Episodes</a>
   {% else %}
