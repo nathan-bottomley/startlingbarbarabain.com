@@ -9,3 +9,4 @@ src/episode-files
 .cache
 .env
 episodes
+reviews
