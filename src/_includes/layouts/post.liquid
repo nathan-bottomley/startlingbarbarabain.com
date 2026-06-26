@@ -2,9 +2,9 @@
 layout: layouts/base.liquid
 ---
 
-{% assign post = collections.podcastEpisode | getCollectionItem %}
-{% assign previousPost = collections.podcastEpisode | getPreviousCollectionItem %}
-{% assign nextPost = collections.podcastEpisode | getNextCollectionItem %}
+{% assign post = collections.episodePost | getCollectionItem %}
+{% assign previousPost = collections.episodePost | getPreviousCollectionItem %}
+{% assign nextPost = collections.episodePost | getNextCollectionItem %}
 
 {% render 'episode.liquid' with post as post %}
 
