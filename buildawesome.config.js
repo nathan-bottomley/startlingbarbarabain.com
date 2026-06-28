@@ -1,6 +1,6 @@
 import Podcaster from 'eleventy-plugin-podcaster'
 import { IdAttributePlugin } from '@awesome.me/buildawesome'
-import cssPlugin from './_11ty/css-plugin.js'
+import cssPlugin from './config/css-plugin.js'
 import { eleventyImageTransformPlugin } from '@11ty/eleventy-img'
 import markdownIt from 'markdown-it'
 import 'dotenv/config'

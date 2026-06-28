@@ -2,9 +2,9 @@ import { bundleAsync, browserslistToTargets } from 'lightningcss'
 import browserslist from 'browserslist'
 import path from 'node:path'
 
-export default function (eleventyConfig) {
-  eleventyConfig.addTemplateFormats('css')
-  eleventyConfig.addExtension('css', {
+export default function ($config) {
+  $config.addTemplateFormats('css')
+  $config.addExtension('css', {
     outputFileExtension: 'css',
     useLayouts: false,
     compile: async function (inputContent, inputPath) {
