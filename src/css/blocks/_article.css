@@ -31,6 +31,15 @@ article {
     }
   }
 
+  &.full-episode .space-1999-information {
+    flex-flow: column;
+    align-items: flex-start;
+
+    img {
+      max-block-size: 400px;
+    }
+  }
+
   .podcast-episode-information,
   figcaption {
     font-size: var(--size-s);

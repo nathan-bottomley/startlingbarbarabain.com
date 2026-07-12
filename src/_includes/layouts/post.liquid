@@ -6,7 +6,7 @@ layout: layouts/base.liquid
 {% assign previousPost = collections.episodePost | getPreviousCollectionItem %}
 {% assign nextPost = collections.episodePost | getNextCollectionItem %}
 
-{% render 'episode.liquid' with post as post %}
+{% render 'full-episode.liquid' with post as post %}
 
 <nav class="post-links navigation-previous-next" aria-label="Episode navigation">
   {% if previousPost -%}

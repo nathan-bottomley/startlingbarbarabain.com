@@ -2,8 +2,15 @@ html {
   text-size-adjust: 100%;
 }
 
-@view-transition {
-  navigation: auto;
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+
+  ::view-transition-group(*) {
+    animation-duration: 0.4s;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
 }
 
 body {

@@ -1,0 +1,46 @@
+{%- assign thisEpisode = post.data.space1999[post.data.episode.episodeNumber] -%}
+<article>
+  {%- if linkInTitle %}
+  <h1><a href="{{ post.url }}">{{ post.data.title }}</a></h1>
+  {%- else -%}
+  <h1>{{ post.data.title }}</h1>
+  {%- endif -%}
+
+  <section class="space-1999-information">
+    <img src="/img/{{ post.data.imageFile }}" alt="{{ post.data.imageAlt }}" sizes="(min-width: 400px) 332px, calc(80vw + 28px)" eleventy:widths="332,664,996" style="view-transition-name: episode-image-{{ post.data.episode.episodeNumber }}">
+    <p>
+      Season {{ thisEpisode.season }},
+      Episode {{ thisEpisode.episode }}.<br>
+      First broadcast on {{ thisEpisode.broadcastDate | readableDate | noWrap }}.
+    </p>
+  </section>
+  <p class="podcast-episode-information">
+    Episode {{ post.data.episode.episodeNumber }} &middot; {{ post.date | readableDate }}
+  </p>
+
+  {{ post.content }}
+  <figure type="audio">
+    <media-controller audio defaultduration="{{ post.data.episode.duration }}">
+      <audio preload="none" slot="media">
+        <source src="{{ post.data.episode.url }}" type="audio/mpeg">
+      </audio>
+      <media-control-bar>
+        <media-play-button></media-play-button>
+        <media-time-display showduration></media-time-display>
+        <media-time-range></media-time-range>
+        <media-mute-button></media-mute-button>
+        <media-volume-range></media-volume-range>
+        <media-playback-rate-button rates="0.7 1 1.2 1.5 1.7 2"></media-playback-rate-button>
+        <media-airplay-button></media-airplay-button>
+      </media-control-bar>
+    </media-controller>
+    <figcaption>
+    Recorded on {{ post.data.recordingDate | readableDate }} &middot;
+    <a target="_blank" rel="noopener" href="{{ post.data.episode.url }}">Download</a> ({{ post.data.episode.size | readableSize: 1 }})<br>
+    Subscribe:
+    {% for subscription in post.data.podcast.subscriptions %}
+      {%- if not forloop.first %} &middot;{% endif -%}&nbsp;<a href="{{ subscription.url }}">{{ subscription.name }}</a>
+    {% endfor -%}
+    </figcaption>
+  </figure>
+</article>
