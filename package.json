@@ -12,7 +12,7 @@
   "author": "Nathan Bottomley",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy-img": "^6.0.0",
+    "@11ty/eleventy-img": "^7.0.0",
     "@awesome.me/buildawesome": "^4.0.0-alpha.8",
     "@sindresorhus/slugify": "^3.0.0",
     "browserslist": "^4.22.1",
