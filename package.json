@@ -7,6 +7,8 @@
     "build": "npx @awesome.me/buildawesome",
     "start": "BUILD_DRAFTS=true npx @awesome.me/buildawesome --serve",
     "episodes": "rclone sync episodes digitalocean:startlingbarbarabain -P --exclude .DS_Store",
+    "transcribe": "node scripts/transcribe.js",
+    "transcribe-all": "node scripts/transcribe.js --overwrite",
     "clean": "rm -rf _site"
   },
   "author": "Nathan Bottomley",
