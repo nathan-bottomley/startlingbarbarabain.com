@@ -54,6 +54,8 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/_redirects')
 
   eleventyConfig.addFilter('noWrap', str => str.replace(/\s+/g, '&nbsp;'))
+  eleventyConfig.addFilter('findSpace1999Episode', (episodes, title) =>
+    episodes.find(episode => episode && episode.title === title))
 }
 
 export const config = {
